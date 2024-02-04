@@ -1,0 +1,411 @@
+.container {
+  min-height: 120vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #28282B;
+}
+
+.title a {
+  color: white;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0 0 1rem;
+  line-height: 1.15;
+  font-size: 3.6rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.description {
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.card {
+  margin: 1rem;
+  flex-basis: 45%;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #0070f3;
+  border-color: #0070f3;
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .aboutexperience {
+    flex-direction: row;
+  }
+}
+
+.developer {
+  position: absolute;
+  top: 0px;
+}
+
+.rotate {
+  transform: rotate3d(1, 0, 0, -70deg);
+  margin-top: -45vh;
+  margin-bottom: 0vh;
+  top: 15vh;
+}
+
+.fadein {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.fadein.appear {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+.site-logo {
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.header {
+--text: #f4f4f4;
+  --text-inverse: #333;
+  --background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3vh 3vh 3vh 3vh;
+  transition: background 200ms ease-in;
+  background: var(--background);
+  color: var(--text);
+}
+
+.header.scrolled {
+  --background: #28282ba1;
+}
+
+.nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav__link {
+  --spacing: 1em;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding: calc(var(--spacing) / 2) var(--spacing);
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.homeintro {
+  padding: 50vh 0;
+  background: rgba(36, 42, 48, 0.2) url(https://i.ibb.co/HTXqPP5/daniel-tian-website-2.jpg);
+  background-size: cover !important;
+  background-position: center !important;
+  background-blend-mode: soft-light !important;
+  color: rgba(255, 255, 255, 1.0);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  left: 0.5vh;
+  bottom: 4.5vh;
+  transition: background 400ms ease-in-out, color 2ms ease-in-out;
+}
+
+.homeintro.background {
+  background: #28282B !important;
+  color: #28282B !important;
+  transition: none;
+}
+.first {
+  background-color: #28282B;
+  transition: background-color 1s ease-in-out;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.first.show {
+  background-color: #d6e4ec;
+  transition: background-color 2s ease-in-out;
+}
+
+.site_logo {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.intro {
+  height: 85vh;
+  margin: 0 auto;
+  background: transparent;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introname {
+  margin: 0 0 0 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 8vh;
+  font-weight: 80;
+  letter-spacing: 2vw;
+  color: #f4f4f4;
+  position: relative;
+  text-transform: uppercase;
+  top: 15.6vh;
+  left: 0vh;
+  text-align: center;
+}
+
+.introsub {
+  list-style: none;
+  text-decoration: none;
+  color: #f4f4f4;
+  margin: 0.5vh 0 0.5vh 0;
+  margin-right: auto;
+  padding: 1.5vh 1vh 1.5vh 1vh;
+  position: relative;
+  font-family: "Roboto" sans-serif;
+  font-weight: 300;
+  font-size: 4vh;
+  letter-spacing: 0.1rem;
+  top: 18vh;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.introsub.show {
+  opacity: 1;
+}
+
+.introsub:hover {
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 12vh;
+  position: relative;
+  font-family: "Roboto" sans-serif;
+  font-weight: 100;
+  background-color: transparent;
+  top: 15vh;
+  padding: 0 0 0 0;
+  transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in;
+}
+
+.title.show {
+  font-size: 8vh;
+  top: -8vh;
+  color: #28282B;
+  padding: 0 0 0 0;
+  transition: font-size 2s ease-in, color 2s ease-in, top 2s ease-in;
+}
+
+.about {
+  background: #28282B;
+}
+
+.aboutme {
+  position: relative;
+  font-weight: 300;
+  color: #28282B;
+  top: -5vh;
+  left: -150vh;
+  opacity: 0;
+  font-size: 0em;
+  transition: left 0.5s ease-in-out, opacity 0.5s ease-in-out, font-size 0.5s ease-in-out;
+}
+
+.aboutme.show {
+  left: 0vh;
+  opacity: 1;
+  font-size: 1.5em;
+  transition: left 2.7s ease-in-out, opacity 2.7s ease-in-out;
+}
+
+.aboutexperience {
+  position: relative;
+  top: -2vh;
+  left: 2vw;
+  display: flex;
+  flex-direction: row;
+  color: #28282B;
+  gap: 10vw;
+  text-align: left;
+  font-size: 2.5vh;
+  font-weight: 200;
+}
+
+.table {
+  position: relative;
+  top: -1.5vw;
+  border-collapse: separate;
+  border-spacing: 1.5vw;
+}
+
+.abouttitle {
+  color: #28282B;
+  font-size: 5vh;
+  font-weight: 300;
+}
+.experiencetext {
+  padding: 0 0 0 0;
+  line-height: 3.5vh;
+}
+.experiences {
+  text-shadow: #89b9f1 0px 0px 4px;
+}
+
+.experiences:hover {
+  text-shadow: #28282B 0px 0px 10px;
+  color: white;
+}
+
+.experiencebox {
+  position: fixed;
+  top: 14vh;
+  left: 50vw;
+  width: 40vw;
+  height: 80vh;
+  background-color: #28282B;
+  border-radius: 10px;
+  padding: 1vh 1vh 1vh 1vh;
+  transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+.projects {
+  background-color: #89b9f1;
+  color: black;
+}
+
+.projectPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  background-color: rgba(40, 40, 43, 0.8);
+  border-radius: 10px;
+  padding: 1vh 1vw 1vh 1vw;
+  color: white;
+  font-weight: 200;
+  font-size: 1.5vw;
+  text-align: center;
+
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.visible {
+  opacity: 1;
+}
+
+.projectDescription {
+  margin: 1vh;
+  padding: 0;
+}
+.projectButtonLeft {
+  position: absolute;
+  margin: auto;
+  padding: auto;
+  padding: 30vh 0 30vh 0;
+  top: 50%;
+  left: 1vw;
+  transform: translate(0%, -50%);
+  cursor: pointer;
+  font-weight: 600;
+}
+.projectButtonRight {
+  position: absolute;
+  margin: auto;
+  padding: auto;
+  top: 50%;
+  right: 1vw;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  font-weight: 600;
+}
