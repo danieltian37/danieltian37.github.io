@@ -3,13 +3,16 @@ import React, { useEffect, useState, useContext } from 'react';
 import configData from '../config.json';
 import { blue } from "@mui/material/colors";
 import styles from '../styles/Home.module.css';
-import GlobalContext from './globalcontext.js';
+import GlobalContext from '../context/globalcontext.js';
+import { myFluid } from './fluidsim.js';
 
 const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopobobility, showStoreChat) => {
     const GRAPH_WIDTH = configData.GRAPH_WIDTH;
     const GRAPH_HEIGHT = configData.GRAPH_HEIGHT;
+
     
     const handleClick = (d) => {
+      window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyP'}));
       if (d.id === 0) {
         showFridge();
       } else if (d.id === 1) {
@@ -30,6 +33,11 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
       .attr("height", GRAPH_HEIGHT)
       .attr("viewbox", [0, 0, GRAPH_WIDTH, GRAPH_HEIGHT])
       .style("scroll-snap-type", "none")
+      .attr("position", "absolute")
+      .on("mousemove", function(event, d) {
+        console.log(event);
+        myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event))
+      })
       
   
     const g = svg.append('g')
@@ -51,22 +59,27 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
       .force('collide', d3.forceCollide(configData.DRAG_COLLIDE_FORCE));
   
     // marker with arrowhead
-  
+
     function dragstarted(event, d) {
       if (!event.active) simulation.alphaTarget(0.3).restart();
       d.fx = d.x;
       d.fy = d.y;
     }
-  
+
     function dragged(event, d) {
       d.fx = event.x;
       d.fy = event.y;
+      myFluid.canvas.dispatchEvent(new MouseEvent('customDrag', event.sourceEvent));
     }
-  
+
     function dragended(event, d) {
       if (!event.active) simulation.alphaTarget(0);
-      d.fx = null;
-      d.fy = null;
+      setTimeout(() => {
+        d.fx = null;
+        d.fy = null;
+      }, 20)
+      
+      
     }
   
     var links = g.append("g")
@@ -78,7 +91,7 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
       .attr("id", function(d, i) {
         return "linkId_" + i;
       })
-      .attr("stroke", "#000000")
+      .attr("stroke", "#ffffff")
       .attr("stroke-width", configData.LINK_WIDTH);
   
     var nodes = g.append("g")
@@ -134,7 +147,9 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
         
         infoPanel.transition()
           .duration(100)
-          .style("opacity", 1);
+          .style("opacity", 1)
+
+        myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event));
       })
       .on("mouseout", function(event, d) {
         d3.select(this)
@@ -145,6 +160,7 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
         infoPanel.transition()
           .duration('200')
           .style("opacity", 0);
+        myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event));
       })
       .on("click", function(event, d) {
         handleClick(d);
@@ -172,9 +188,17 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
         })
         .attr("height", function(d) {
           if (d.id === 2) {
-            return 100 + ((d.y - 400)/5);
+            if (100 + ((d.y - 400)/5) < 0) {
+              return 0;
+            } else {
+              return 100 + ((d.y - 400)/5);
+            }
           } else if (d.id === 1) {
-            return 100 + ((d.y - 400)/5);
+            if (100 + ((d.y - 400)/5) < 0) {
+              return 0;
+            } else {
+              return 100 + ((d.y - 400)/5);
+            }
           } else {
             return 80 + ((d.y - 400)/5);
           }

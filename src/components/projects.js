@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from 'react';
-import GlobalContext from './globalcontext';
+import GlobalContext from '../context/globalcontext';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { myFluid } from './fluidsim';
 
 const Projects = () => {
     const context = useContext(GlobalContext);
@@ -11,6 +12,7 @@ const Projects = () => {
         context.setIsVisible2(false);
         context.setIsVisible3(false);
         context.setIsVisible4(false);
+        window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyP'}));
     }
 
     useEffect(() => {
@@ -36,6 +38,9 @@ const Projects = () => {
                 console.log('Made visible');
                 project.classList.add(styles.visible);
             }, 20);
+            project.addEventListener('mousemove', (e) => {
+                myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event))
+            })
         }
     }, [context.isVisible1, context.isVisible2, context.isVisible3, context.isVisible4])
 

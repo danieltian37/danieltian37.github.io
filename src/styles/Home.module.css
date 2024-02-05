@@ -110,7 +110,7 @@
   transform: rotate3d(1, 0, 0, -70deg);
   margin-top: -45vh;
   margin-bottom: 0vh;
-  top: 15vh;
+  z-index : 1;
 }
 
 .fadein {
@@ -274,6 +274,9 @@
   background-color: transparent;
   top: 15vh;
   padding: 0 0 0 0;
+  z-index: 2;
+  pointer-events: none;
+  color: white;
   transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in;
 }
 
@@ -358,7 +361,7 @@
 }
 
 .projects {
-  background-color: #89b9f1;
+  background-color: transparent;
   color: black;
 }
 
@@ -376,7 +379,7 @@
   font-weight: 200;
   font-size: 1.5vw;
   text-align: center;
-
+  z-index: 5;
   opacity: 0;
   transition: opacity 0.2s ease-in;
 }
@@ -408,4 +411,10 @@
   transform: translate(0, -50%);
   cursor: pointer;
   font-weight: 600;
+}
+.fluids {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
 }

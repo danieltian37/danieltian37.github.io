@@ -6,7 +6,9 @@ import Intro from "../components/intro.js";
 import About from "../components/about.js";
 import Projects from "../components/projects.js";
 import { useRef } from 'react';
-import { GlobalContextProvider } from '../components/globalcontext';
+import { GlobalContextProvider } from '../context/globalcontext';
+import FluidSim from '../components/fluidsim';
+import { Fluid } from 'fluid-canvas';
 
 export default function Home() {
   return (
@@ -27,15 +29,11 @@ export default function Home() {
           <div className={`${styles.container} ${styles.projects}`} id="Projects"> 
             <p className={styles.title}> Projects </p>
             <div className={styles.rotate}>
-                <Faders margin="-200px">
                   <Nodes/>
-                </Faders>
+                
             </div>
+            <FluidSim/>
             <Projects/>
-          </div>
-          
-          <div>
-            <p>hi im cool</p>
           </div>
 
           <div className={styles.container}> 
