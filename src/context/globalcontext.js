@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, use, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 const GlobalContext = createContext(
     {
@@ -18,6 +18,8 @@ const GlobalContextProvider = ({ children }) => {
     const [isVisible2, setIsVisible2] = useState(false);
     const [isVisible3, setIsVisible3] = useState(false);
     const [isVisible4, setIsVisible4] = useState(false);
+    const [clicked, setClicked] = useState(false);
+    const [first, setFirst] = useState(true);
 
     const leftButton = () => {
       if (isVisible1) {
@@ -36,14 +38,16 @@ const GlobalContextProvider = ({ children }) => {
       } else if (isVisible2) {
         showFridge();
       } else if (isVisible3) {
-        showScrambler();
-      } else if (isVisible4) {
         showStoreChat();
+      } else if (isVisible4) {
+        showScrambler();
       }
     }
 
 
     const showFridge = () => {
+      setClicked(true);
+
       setIsVisible2(false);
       setIsVisible3(false);
       setIsVisible4(false);
@@ -53,29 +57,44 @@ const GlobalContextProvider = ({ children }) => {
       console.log("Open Fridge")
     };
     const showScrambler = () => {
+      setClicked(true);
+      
       setIsVisible1(false);
       setIsVisible3(false);
       setIsVisible4(false);
 
-      setIsVisible2(!isVisible2);
+      setIsVisible2(true);
       console.log("Open Scrambler")
     };
     const showMonopobobility = () => {
+      setClicked(true);
+      
       setIsVisible1(false);
       setIsVisible2(false);
       setIsVisible4(false);
 
-      setIsVisible3(!isVisible3);
+      setIsVisible3(true);
       console.log("Open Monopobobility")
     };
     const showStoreChat = () => {
+      setClicked(true);
+      
       setIsVisible1(false);
       setIsVisible2(false);
       setIsVisible3(false);
 
-      setIsVisible4(!isVisible4);
+      setIsVisible4(true);
       console.log("Open StoreChat")
     };
+
+
+    useEffect(() => {
+      if (first) {
+        setFirst(false);
+      } else {
+        window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyP'}));
+      }
+    }, [clicked]);
 
         return (
         <GlobalContext.Provider value={{
@@ -92,7 +111,9 @@ const GlobalContextProvider = ({ children }) => {
             showMonopobobility,
             showStoreChat,
             leftButton,
-            rightButton
+            rightButton,
+            setClicked,
+            clicked,
         }}>
             {children}
         </GlobalContext.Provider>

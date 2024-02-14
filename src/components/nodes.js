@@ -12,7 +12,6 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
 
     
     const handleClick = (d) => {
-      window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyP'}));
       if (d.id === 0) {
         showFridge();
       } else if (d.id === 1) {
@@ -189,18 +188,22 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
         .attr("height", function(d) {
           if (d.id === 2) {
             if (100 + ((d.y - 400)/5) < 0) {
-              return 0;
+              return 1;
             } else {
               return 100 + ((d.y - 400)/5);
             }
           } else if (d.id === 1) {
             if (100 + ((d.y - 400)/5) < 0) {
-              return 0;
+              return 1;
             } else {
               return 100 + ((d.y - 400)/5);
             }
           } else {
-            return 80 + ((d.y - 400)/5);
+            if (80 + ((d.y - 400)/5) < 0) {
+              return 1;
+            } else {
+              return 80 + ((d.y - 400)/5);
+            }
           }
         })
         .attr("width", function(d) {

@@ -9,6 +9,7 @@ import { useRef } from 'react';
 import { GlobalContextProvider } from '../context/globalcontext';
 import FluidSim from '../components/fluidsim';
 import { Fluid } from 'fluid-canvas';
+import Personal from '../components/personal';
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           <link rel="icon" href="https://i.pinimg.com/originals/e4/08/9e/e4089e5007c2177db368470329a6e5be.jpg" />
           <link href="./styles/global.css" rel="stylesheet"></link>
           <script src="https://cdn.jsdelivr.net/npm/fluid-canvas@latest"></script>
+          <script src="https://unpkg.com/react-view-pager/dist/react-view-pager.js"></script>
         </Head>
 
         <Intro/>
@@ -26,24 +28,21 @@ export default function Home() {
         <main>
           <About/>
 
-          <div className={`${styles.container} ${styles.projects}`} id="Projects"> 
-            <p className={styles.title}> Projects </p>
+          <div className={`${styles.container} ${styles.projects}`} id="Projects">
+            <p className={styles.projectTitle}>Projects</p>
+            <p className={styles.projectIntro}>Play around with my work!</p>
             <div className={styles.rotate}>
                   <Nodes/>
-                
             </div>
             <FluidSim/>
-            <Projects/>
+            <Projects/> 
           </div>
 
-          <div className={styles.container}> 
-            <Faders> 
-              <h1>Your Content</h1>
-              <p>This will fade in as you scroll.</p> 
-            </Faders> 
-          </div>
+          <Personal/>
 
-          <div className={styles.container}>
+          
+
+          <div className={styles.container} id = "Contact">
             <p>hi im cool</p>
           </div>
         </main>

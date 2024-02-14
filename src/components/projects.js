@@ -8,39 +8,61 @@ import { myFluid } from './fluidsim';
 const Projects = () => {
     const context = useContext(GlobalContext);
     const handleClick = () => {
-        context.setIsVisible1(false);
-        context.setIsVisible2(false);
-        context.setIsVisible3(false);
-        context.setIsVisible4(false);
-        window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyP'}));
+				const project = document.querySelector(`.${styles.projectPopup}`)
+				if (project) {
+					project.classList.remove(styles.visible);
+					const timeoutId = setTimeout(() => {
+						context.setIsVisible1(false);
+						context.setIsVisible2(false);
+						context.setIsVisible3(false);
+						context.setIsVisible4(false);
+						context.setClicked(false);
+					}, 200);
+				}
     }
 
     useEffect(() => {
+
       const handleScroll = () => {
-        context.setIsVisible1(false);
-        context.setIsVisible2(false);
-        context.setIsVisible3(false);
-        context.setIsVisible4(false);
+				const project = document.querySelector(`.${styles.projectPopup}`)
+				if (project) {
+					project.classList.remove(styles.visible);
+					const timeoutId = setTimeout(() => {
+						context.setIsVisible1(false);
+						context.setIsVisible2(false);
+						context.setIsVisible3(false);
+						context.setIsVisible4(false);
+						context.setClicked(false);
+					}, 200);
+				}
       };
+			window.addEventListener('scroll', handleScroll);
 
-      window.addEventListener('scroll', handleScroll);
-
+			
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
 
+
     useEffect(() => {
         const project = document.querySelector(`.${styles.projectPopup}`)
-        console.log(context.isVisible1)
+				const graph = document.querySelector("svg")
         if (project) {
             const timeoutId = setTimeout(() => {
-                console.log('Made visible');
                 project.classList.add(styles.visible);
             }, 20);
             project.addEventListener('mousemove', (e) => {
                 myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event))
             })
+						document.addEventListener('mousedown', (event) => {
+							event.stopPropagation();
+							console.log(event.target)
+							console.log(graph)
+							if (event.target === myFluid.canvas || event.target === graph) {
+									handleClick();
+							}
+						});
         }
     }, [context.isVisible1, context.isVisible2, context.isVisible3, context.isVisible4])
 
@@ -48,23 +70,22 @@ const Projects = () => {
         <>
             {context.isVisible1 && (
                 <div className={`${styles.projectPopup}`}>
+										<h1 style ={{fontWeight: "400"}}>Virtual Refrigerator</h1>
                     <Link href = "https://virtual-fridge-9vs8.onrender.com" target="_blank" rel="noopener noreferrer">
                         <Image
                             src = "/fridgedemo.gif"
                             width = {0}
                             height = {0}
                             sizes = "100vw"
-                            style = {{ width: 'auto', height: '50vh', opacity: 1, padding: "1vh 2vw 1vh 2vw" }}
+                            style = {{ width: 'auto', height: '50vh', opacity: 1, margin: "1vh 2vw 2vh 2vw" }}
                             alt = "Fridge Demonstration"
                         />
                     </Link>
 
 
-                    <p className={styles.projectDescription}>Virtual Refrigerator</p>
-                    <p className={styles.projectDescription}></p>
-
-
-                    <p onClick={handleClick} style={{ cursor: 'pointer', fontWeight: '1000', margin: '0 0 1vh 0' }}>x</p>
+                    <p className={styles.projectDescription}>My first full-stack project, I created the Virtual Refrigerator as part of the Launchpad initiative at Purdue. 
+                    The fully functioning, token authenticated web application is built using <b>React, Node, Express, and MongoDB.</b> It's currently hosted on Render.com, and you can check it out 
+                    by clicking the gif above!</p>
 
                     <p onClick={context.leftButton} className={styles.projectButtonLeft}>&lt;</p>
                     <p onClick={context.rightButton} className={styles.projectButtonRight}>&gt;</p>
@@ -72,33 +93,54 @@ const Projects = () => {
             )}
             {context.isVisible2 && (
                 <div className={`${styles.projectPopup}`}>
+										<h1 style ={{fontWeight: "400"}}>Scrambler</h1>
                     <Image
                         src = "/scramblerdemo.gif"
                         width = {0}
                         height = {0}
                         sizes = "100vw"
-                        style = {{ width: 'auto', height: '50vh', opacity: 1, padding: "1vh 2vw 1vh 2vw" }}
+                        style = {{ width: 'auto', height: '50vh', opacity: 1, margin: "1vh 2vw 0vh 2vw" }}
                         alt = "Scrambler Demonstration"
                     />
-                    <p>Scrambler guy</p>
-                    <p onClick={handleClick} style={{ cursor: 'pointer' }}>x</p>
+                    <p>Over the course of two months, I spent more than 100 hours building, calibrating, testing, rebuilding, recalibrating, and retesting the <b>Scrambler</b>, a build 
+                    to compete as part of our Science Olympiad team. As President in 2023, I led our team to win Indiana State, breaking the all-time record with a score of 57.</p>
                     <p onClick={context.leftButton} className={styles.projectButtonLeft}>&lt;</p>
                     <p onClick={context.rightButton} className={styles.projectButtonRight}>&gt;</p>
                 </div>
             )}
             {context.isVisible3 && (
                 <div className={`${styles.projectPopup}`}>
-                    <p>Monopobobility guy </p>
-                    <p onClick={handleClick} style={{ cursor: 'pointer' }}>x</p>
+										<h1 style ={{fontWeight: "400"}}>Monopobobility</h1>
+                    <Image
+                        src = "/monopobobilitydemo.gif"
+                        width = {0}
+                        height = {0}
+                        sizes = "100vw"
+                        style = {{ width: 'auto', height: '50vh', opacity: 1, margin: "1vh 2vw 1vh 2vw" }}
+                        alt = "Monopobobility Demonstration"
+                    />
+                    <p>For my first hackathon, at Hello World!, I created an interactive, 3D representation of landing distributions created from simulating popular board game Monopoly. 
+                        This project built my skills with Matplotlib and collaborating with teammates with different specialties under a strict deadline, and I was able to deliver and present a product in less than 24 hours.
+                    </p>
                     <p onClick={context.leftButton} className={styles.projectButtonLeft}>&lt;</p>
                     <p onClick={context.rightButton} className={styles.projectButtonRight}>&gt;</p>
                 </div>
             )}
             {context.isVisible4 && (
                 <div className={`${styles.projectPopup}`}>
-                    <p>StoreChat guy </p>
+										<h1 style ={{fontWeight: "400"}}>StoreChat</h1>
+                    <Image
+                        src = "/storechatdemo.gif"
+                        width = {0}
+                        height = {0}
+                        sizes = "100vw"
+                        style = {{ width: 'auto', height: '50vh', opacity: 1, margin: "1vh 2vw 1vh 2vw" }}
+                        alt = "StoreChat Demonstration"
+                    />
+                    <p>For the final project of CS180, I worked with a team of four others to create a full-stack messaging system with account creation and authentication, data storage via .txt files, 
+                        and concurrent server-client communication. I was responsible for connecting the server and client as well as the user interface, and I learned a lot about the importance of scrumming, task-delegation and management, and deadlines in a project.
+                    </p>
 
-                    <p onClick={handleClick} style={{ cursor: 'pointer' }}>x</p>
                     <p onClick={context.leftButton} className={styles.projectButtonLeft}>&lt;</p>
                     <p onClick={context.rightButton} className={styles.projectButtonRight}>&gt;</p>
                 </div>

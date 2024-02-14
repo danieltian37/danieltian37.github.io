@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -108,9 +108,11 @@
 
 .rotate {
   transform: rotate3d(1, 0, 0, -70deg);
-  margin-top: -45vh;
+  top: -25%;
+  margin-left: 7vw;
   margin-bottom: 0vh;
   z-index : 1;
+  position: relative;
 }
 
 .fadein {
@@ -197,6 +199,7 @@
   transition: background-color 1s ease-in-out;
   text-align: center;
   font-family: "Roboto", sans-serif;
+  justify-content: center;
 }
 
 .first.show {
@@ -265,27 +268,27 @@
 }
 
 .title {
-  margin: 0;
+  margin: 45vh 0 0 0;
   line-height: 1.15;
   font-size: 12vh;
-  position: relative;
+  position: absolute;
   font-family: "Roboto" sans-serif;
   font-weight: 100;
   background-color: transparent;
-  top: 15vh;
   padding: 0 0 0 0;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
   color: white;
-  transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in;
+  transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in, margin 1s ease-in;
 }
 
 .title.show {
   font-size: 8vh;
-  top: -8vh;
+  top: 0vh;
   color: #28282B;
   padding: 0 0 0 0;
-  transition: font-size 2s ease-in, color 2s ease-in, top 2s ease-in;
+  margin: 18vh 0 0 0;
+  transition: font-size 2s ease-in, color 2s ease-in, top 2s ease-in, margin 2s ease-in;
 }
 
 .about {
@@ -296,7 +299,7 @@
   position: relative;
   font-weight: 300;
   color: #28282B;
-  top: -5vh;
+  top: 0vh;
   left: -150vh;
   opacity: 0;
   font-size: 0em;
@@ -312,7 +315,7 @@
 
 .aboutexperience {
   position: relative;
-  top: -2vh;
+  top: 0vh;
   left: 2vw;
   display: flex;
   flex-direction: row;
@@ -325,7 +328,7 @@
 
 .table {
   position: relative;
-  top: -1.5vw;
+  top: 0vw;
   border-collapse: separate;
   border-spacing: 1.5vw;
 }
@@ -338,6 +341,7 @@
 .experiencetext {
   padding: 0 0 0 0;
   line-height: 3.5vh;
+  cursor: pointer;
 }
 .experiences {
   text-shadow: #89b9f1 0px 0px 4px;
@@ -350,24 +354,70 @@
 
 .experiencebox {
   position: fixed;
-  top: 14vh;
-  left: 50vw;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
   width: 40vw;
-  height: 80vh;
+  height: auto;
   background-color: #28282B;
   border-radius: 10px;
-  padding: 1vh 1vh 1vh 1vh;
-  transition: top 0.5s ease-in-out, left 0.5s ease-in-out;
+  padding: 1vh 1vw 1vh 1vw;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.experiencebox.show {
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+.experiencebullets {
+  text-align: left;
+  margin-left: 20px;
+  text-indent: -20px;
+}
+
+.aboutSummary {
+  width: 50%;
+  color: #28282B;
+  font-size: 2.5vh;
+  font-weight: 300;
 }
 
 .projects {
-  background-color: transparent;
+  background-color: #0f0f0f;
   color: black;
+  height: 120vh;
+}
+
+.projectTitle {
+  margin: 18vh 0 -24vh 0;
+  line-height: 1.15;
+  font-size: 10vh;
+  font-family: "Roboto" sans-serif;
+  font-weight: 100;
+  background-color: transparent;
+  padding: 0 0 0 0;
+  z-index: 2;
+  pointer-events: none;
+  color: white;
+  transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in, margin 1s ease-in;
+}
+
+.projectIntro {
+  position: relative;
+  margin: 0vh 0vh -6vh 0vh;
+  top: 28vh;
+  color: white;
+  z-index: 3;
+  font-weight: 100;
+  font-size: 3.5vh;
+  pointer-events: none;
 }
 
 .projectPopup {
   position: fixed;
-  top: 50%;
+  font-family: 'Ubuntu', sans-serif;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: auto;
@@ -377,7 +427,7 @@
   padding: 1vh 1vw 1vh 1vw;
   color: white;
   font-weight: 200;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   text-align: center;
   z-index: 5;
   opacity: 0;
@@ -388,14 +438,13 @@
 }
 
 .projectDescription {
-  margin: 1vh;
+  margin: 1vh 1vh 2vh 1vh;
   padding: 0;
 }
 .projectButtonLeft {
   position: absolute;
-  margin: auto;
-  padding: auto;
-  padding: 30vh 0 30vh 0;
+  padding: 30vh 1vw 30vh 1vw;
+  margin: auto -1vw auto -1vw;
   top: 50%;
   left: 1vw;
   transform: translate(0%, -50%);
@@ -404,8 +453,8 @@
 }
 .projectButtonRight {
   position: absolute;
-  margin: auto;
-  padding: auto;
+  padding: 30vh 1vw 30vh 1vw;
+  margin: auto -1vw auto -1vw;
   top: 50%;
   right: 1vw;
   transform: translate(0, -50%);
@@ -417,4 +466,32 @@
   top: 0;
   height: 100%;
   overflow: hidden;
+}
+.personal {
+  background-color: #d6e4ec;
+  color: #28282B;
+  font-size: 2.5vh;
+  font-weight: 300;
+  padding: 0 0 0 0;
+  text-align: center;
+  opacity: 1;
+  transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.personaltitle {
+  margin: 15vh 0 0 0;
+  line-height: 1.15;
+  font-size: 10vh;
+  font-family: "Roboto" sans-serif;
+  font-weight: 100;
+  background-color: transparent;
+  z-index: 2;
+  color: black;
+  transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in, margin 1s ease-in;
+}
+.personalintro {
+  margin: 6vh;
+  font-size: 1.5em;
+  font-weight: 300;
+
 }

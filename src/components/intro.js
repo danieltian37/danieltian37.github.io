@@ -130,10 +130,10 @@ const Intro = () => {
                         <a href="#Projects" className={styles.nav__link}>Projects</a>
                     </li>
                     <li class="nav__list-item">
-                        <a href="#" className={styles.nav__link}>Personal</a>
+                        <a href="#Personal" className={styles.nav__link}>Personal</a>
                     </li>
                     <li class="nav__list-item">
-                        <a href="#" className={styles.nav__link}>Contact Me</a>
+                        <a href="#Contact" className={styles.nav__link}>Contact Me</a>
                     </li>
                 </ul>
                 </nav>
@@ -148,7 +148,7 @@ const Intro = () => {
                 </h1>
                 <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Developer</a>
                 <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Designer</a>
-                <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>Dreamer.</i></b></a>
+                <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>Dreamer.</i></b></a>
             </div>
 
             

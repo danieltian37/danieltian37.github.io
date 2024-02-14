@@ -1,48 +1,44 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from '../styles/Home.module.css';
 import Faders from '../components/faders.js';
 import Image from 'next/image';
 
-const Experience = () => {
-    return (
-        <>
-            <div className = {styles.experiencebox}>
-                <h2>November 2023 — Present</h2>
-                <Image
-                    src = "/KnowledgeBase.png"
-                    width = {0}
-                    height = {0}
-                    sizes="100vw"
-                    style={{ width: '100%', height: 'auto' }}
-                    alt = "Picture of WebDecide"
-                />
-            </div>
-        </>
-    );
-}
-
 const About = () => {
-    const [isHovering, setIsHovering] = useState(false);
+    const [expOne, setExpOne] = useState(false);
+    const [expTwo, setExpTwo] = useState(false);
+    const [expThree, setExpThree] = useState(false);
+    const clickOne = () => {
+        setExpOne(true);
+        setExpTwo(false);
+        setExpThree(false);
+    }
+    const clickTwo = () => {
+        setExpOne(false);
+        setExpTwo(true);
+        setExpThree(false);
+    }
+    const clickThree = () => {
+        setExpOne(false);
+        setExpTwo(false);
+        setExpThree(true);
+    }
+    const container = useRef(null);
+
 
     useEffect(() => {
       const elements = document.querySelector(`.${styles.title}`);
       const first = document.querySelector(`.${styles.first}`);
       const aboutme = document.querySelector(`.${styles.aboutme}`);
-      const height = document.documentElement.clientHeight;
       const width = document.documentElement.clientWidth;
+      const box = document.querySelector(`.${styles.experiencebox}`);
+      
       if (first && elements) {
         const handleIntersection = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    console.log("not here")
                     elements.classList.add(styles.show);
                     first.classList.add(styles.show);
                     aboutme.classList.add(styles.show);
-                } else {
-                    console.log("here")
-                    elements.classList.remove(styles.show);
-                    first.classList.remove(styles.show);
-                    aboutme.classList.remove(styles.show);
                 }
             });
         };
@@ -60,8 +56,63 @@ const About = () => {
       }
     }, []);
 
+    useEffect(() => {
+        const box = document.querySelector(`.${styles.experiencebox}`);
+        if (box) {
+            const timeoutId = setTimeout(() => {
+                box.classList.add(styles.show);
+            }, 20);
+        }
+
+        const experiences = document.querySelector(`.${styles.aboutexperience}`);
+        const about = document.querySelector(`.${styles.aboutme}`);
+        const title = document.querySelector(`.${styles.title}`);
+        const abouttitle = document.querySelector(`.${styles.abouttitle}`);
+
+        document.addEventListener('mousedown', (event) => {
+            if (event.target === about || event.target === title || event.target === experiences || event.target === abouttitle || event.target === container.current) {
+                if (box) {
+                    box.classList.remove(styles.show);
+                    const timeoutId = setTimeout(() => {
+                        setExpOne(false);
+                        setExpTwo(false);
+                        setExpThree(false);
+                    }, 200);
+                }
+            }
+        })
+        
+        const handleScroll = () => {
+            if (box) {
+                box.classList.remove(styles.show);
+                const timeoutId = setTimeout(() => {
+                    setExpOne(false);
+                    setExpTwo(false);
+                    setExpThree(false);
+                }, 200);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            document.removeEventListener('mousedown', (event) => {
+                if (event.target === about || event.target === title || event.target === experiences || event.target === abouttitle || container.contains(event.target)) {
+                    if (box) {
+                        box.classList.remove(styles.show);
+                        const timeoutId = setTimeout(() => {
+                            setExpOne(false);
+                            setExpTwo(false);
+                            setExpThree(false);
+                        }, 200);
+                    }
+                }
+            })
+        };
+    }, [expOne, expTwo, expThree])
+
     return (
-        <div className={[styles.container, styles.first].join(" ")} id="About"> 
+    <>
+        <div className={[styles.container, styles.first].join(" ")} id="About" ref={container}> 
           <h1 className={styles.title}>
             Who am I?
           </h1>
@@ -76,20 +127,19 @@ const About = () => {
                 <h2 className={styles.abouttitle}>Experience</h2>
                 <div className={styles.experiences}>
                     <p className= {styles.experiencetext}
-                        onMouseEnter={() => setIsHovering(true)}
-                        onMouseLeave={() => setIsHovering(false)}>
+                        onClick={clickOne}>
                         <b>Human-Centered Software Systems Lab</b><br></br>
                         Undergraduate Research Assistant
                     </p>
                 </div>
                 <div className={styles.experiences}>
-                    <p className= {styles.experiencetext}>
+                    <p className= {styles.experiencetext} onClick={clickTwo}>
                         <b>AstraZeneca</b><br></br>
                         App Development, The Data Mine Corporate Partners
                     </p>
                 </div>
                 <div className={styles.experiences}>
-                    <p className= {styles.experiencetext}>
+                    <p className= {styles.experiencetext} onClick={clickThree}>
                         <b>IU Luddy School of Informatics</b><br></br>
                         Undergraduate Research Assistant
                     </p>
@@ -127,22 +177,89 @@ const About = () => {
                 </table>
             </div>
           </div>
-          {isHovering && <Experience />}
-            {/* <div>
-                <div>
-                    <a href="https://drive.google.com/file/d/1qj5Lc4Xw3Z9q3wvYw2Q9m2s4u4aLhX6B/view?usp=sharing" target="_blank"
-                        className= {styles.resumebutton}>
-                        download my résumé
-                    </a>
-                </div>
-            </div> */}
+          {expOne && <ExperienceOne />}
+          {expTwo && <ExperienceTwo />}
+          {expThree && <ExperienceThree />}
         </Faders>
 
 
-
         </div>
+    </>
         
     );
 }
 
 export default About;
+
+const ExperienceOne = () => {
+    return (
+        <>
+            <div className = {styles.experiencebox}>
+                <h2>November 2023 — Present</h2>
+                <Image
+                    src = "/KnowledgeBase.png"
+                    width = {0}
+                    height = {0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto'}}
+                    alt = "Picture of WebDecide"
+                />
+                <p className = {styles.experiencebullets}>
+                    — Developed web app WebDecide, an interactive knowledge-base visualization using Stack Overflow data hosted on MongoDB facilitating deep learning model compatibility checks, version searches, exploration with references
+                    </p>
+                <p className = {styles.experiencebullets}>
+                    — Enhanced React & D3.js knowledge graph with security insights, represented security features and vulnerabilities
+                    </p>
+                <p className = {styles.experiencebullets}>
+                    — Implemented semantic search to refine user experience, streamline accessibility to relevant information
+                </p>
+            </div>
+        </>
+    );
+}
+const ExperienceTwo = () => {
+    return (
+        <>
+            <div className = {styles.experiencebox}>
+                <h2>January 2024 — Present</h2>
+                <Image
+                    src = "/Tulip.jpg"
+                    width = {0}
+                    height = {0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                    alt = "Picture of Tulip"
+                />
+                <p className = {styles.experiencebullets}>
+                    — Spearheaded development and deployment of company apps using Tulip and PowerBi, in order to align with business objectives to streamline processes, improve operational, employee efficiency
+                    </p>
+                <p className = {styles.experiencebullets}>
+                    — Collaborated closely in Agile framework with a small cross-functional team to understand requirements, design custom solutions, and ensure seamless integration into existing workflows
+                    </p>
+            </div>
+        </>
+    );
+}
+const ExperienceThree = () => {
+    return (
+        <>
+            <div className = {styles.experiencebox}>
+                <h2>May 2022 — December 2022</h2>
+                <Image
+                    src = "/SVM.png"
+                    width = {0}
+                    height = {0}
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                    alt = "Picture of WebDecide"
+                />
+                <p className = {styles.experiencebullets}>
+                    — Created a privacy-preserving machine learning model, Support Vector Machine, on horizontally partitioned data
+                </p>
+                <p className = {styles.experiencebullets}>
+                    — Achieved 16.1% increased accuracy, allowing hospitals to anonymously train model built with SciKit-Learn with 85.4% classification accuracy
+                </p>
+            </div>
+        </>
+    );
+}
