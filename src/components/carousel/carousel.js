@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from 'embla-carousel-react'
-import styles from '../../styles/Carousel.module.css';
+import photos from '../../styles/Carousel.module.css';
+import writing from '../../styles/Writing.module.css';
 import Image from 'next/image';
 import { DotButton, useDotButton } from './dots.js'
 import {
@@ -9,16 +10,23 @@ import {
   usePrevNextButtons
 } from './arrows.js'
 import imageByIndex from "./images";
+import writingByIndex from "./writing";
 import Autoplay from 'embla-carousel-autoplay'
 
 
-const image1 = '/Tulip.jpg';
-const image2 = '/SVM.png';
-const images = [image1, image2, image1, image1]
-
-
 const Carousel = (props) => {
-  const { slides, options } = props
+  const { slides, options, id } = props
+  const styles = id === 'writing' ? writing : photos
+
+  const handleIndex = (index) => {
+    if (id === 'writing') {
+      return writingByIndex(index)
+    } else {
+      return imageByIndex(index)
+    }
+
+  } 
+
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay({ playOnInit: true, delay: 3000 })
   ])
@@ -89,14 +97,14 @@ const Carousel = (props) => {
             {slides.map((index) => (
               <div className={styles.embla__slide} key={index}>
                 <Image
-                  src={imageByIndex(index)}
+                  src={handleIndex(index)}
                   height={0}
                   width={0}
                   sizes="100vw"
                   className={styles.embla__slide__img}
                   alt="cover image"
                   placeholder="blur"
-                  blurDataURL={imageByIndex(index)}
+                  blurDataURL={handleIndex(index)}
                   loading = "eager"
                 />
               </div>

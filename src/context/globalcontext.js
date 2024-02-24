@@ -1,5 +1,7 @@
 import React, { createContext, use, useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import handlePause from '../fluids/initializer.js'
+
 const GlobalContext = createContext(
     {
         isVisible1: false,
@@ -92,7 +94,7 @@ const GlobalContextProvider = ({ children }) => {
       if (first) {
         setFirst(false);
       } else {
-        window.dispatchEvent(new KeyboardEvent('keydown', {code: 'KeyP'}));
+        handlePause()
       }
     }, [clicked]);
 

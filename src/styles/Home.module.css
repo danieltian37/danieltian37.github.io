@@ -1,6 +1,6 @@
 .container {
   vertical-align: top;
-  min-height: 120vh;
+  min-height: 102vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,18 @@
   z-index: 1;
   background-color: #28282B;
   overflow: hidden;
+}
+
+.linkedin {
+  position: relative;
+  top: 0.1em;
+  left: -14vw;
+}
+
+.github {
+  position: relative;
+  top: 0.1em;
+  left: -28vw;
 }
 
 .title a {
@@ -135,7 +147,7 @@
 }
 
 .header {
---text: #f4f4f4;
+  --text: #f4f4f4;
   --text-inverse: #333;
   --background: transparent;
   position: fixed;
@@ -206,7 +218,7 @@
 }
 
 .first.show {
-  background-color: #fbfbfb;
+  background-color: #FAF9F6;
   transition: background-color 2s ease-in-out;
 }
 
@@ -218,7 +230,7 @@
 }
 
 .intro {
-  height: 85vh;
+  height: 39.1rem;
   margin: 0 auto;
   background: transparent;
   z-index: 1;
@@ -287,7 +299,7 @@
 
 .title.show {
   font-size: 4rem;
-  top: -12rem;
+  margin: -28rem 0 0 0;
   color: #28282B;
   padding: 0 0 0 0;
   transition: font-size 2s ease-in, color 2s ease-in, top 2s ease-in, margin 2s ease-in;
@@ -301,7 +313,7 @@
   position: relative;
   font-weight: 300;
   color: #28282B;
-  top: 0vh;
+  top: 6vh;
   left: -150vh;
   opacity: 0;
   font-size: 0em;
@@ -317,7 +329,7 @@
 
 .aboutexperience {
   position: relative;
-  top: 0;
+  top: 3rem;
   left: 2rem;
   display: flex;
   flex-direction: row;
@@ -337,7 +349,7 @@
 
 .abouttitle {
   color: #28282B;
-  font-size: 5vh;
+  font-size: 2.2rem;
   font-weight: 300;
 }
 .experiencetext {
@@ -472,7 +484,7 @@
   overflow: hidden;
 }
 .personal {
-  background-color: #fbfbfb;
+  background-color: #FAF9F6;
   color: #28282B;
   font-size: 2.5vh;
   font-weight: 300;
@@ -480,25 +492,40 @@
   text-align: center;
   opacity: 1;
   overflow: visible;
+  min-height: 140vh;
   transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .personaltitle {
-  margin: 15vh 0 0 0;
+  margin: 15vh 0 6vh 0;
   line-height: 1.15;
   font-size: 10vh;
   font-family: "Roboto" sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   background-color: transparent;
   z-index: 2;
   color: black;
   transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in, margin 1s ease-in;
 }
 .personalintro {
-  margin: 6vh;
-  font-size: 1.5em;
+  margin: -5rem 0 0 0;
+  font-size: 1.2em;
   font-weight: 300;
+  max-width: 50rem;
+}
 
+.personalconclusion {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 300;
+  max-width: 40rem;
+}
+
+.personalwriting {
+  margin: 2vh;
+  font-size: 1.2em;
+  font-weight: 300;
+  max-width: 20rem;
 }
 .carousel {
   display: flex;
@@ -506,22 +533,43 @@
 }
 .carouselTitle {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 4.5rem;
+  font-size: 4rem;
   color: #28282B;
   margin: 0 -11rem 0 -18rem;
   transform: rotate(-90deg) translateX(-51%);
   height: 0;
 }
 
+.carouselWriting {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 4.5rem;
+  color: #28282B;
+  margin: 0 -4rem 0 -11rem;
+  transform: rotate(-90deg) translateX(-61%);
+  height: 0;
+}
+
+.hobbiestitle {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 4.5rem;
+  color: #28282B;
+}
+
+.hobbiesend {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  color: #28282B;
+}
+
 .button__svg {
-  width: 3rem;
-  height: 3rem;
+  width: 2.4rem;
+  height: 2.4rem;
   rotate: -90deg;
   transition: width 0.2s, height 0.2s;
 }
 .button__svg:hover {
-  width: 3.3rem;
-  height: 3.3rem;
+  width: 3rem;
+  height: 3rem;
   transition: width 0.2s, height 0.2s;
 }
 
@@ -532,4 +580,152 @@
   top: -5rem;
   cursor: pointer;
   z-index: 2;
+}
+
+.contact {
+  overflow: visible;
+  height: 100vh;
+}
+
+.button6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+.button6:hover,
+.button6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button6:hover {
+  transform: translateY(-1px);
+}
+
+.button6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.formtitle {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: 100;
+  font-family: 'Roboto' sans-serif;
+  top: 6%;
+  left: 50%;
+  translate: -50%;
+}
+
+.form {
+  margin: 14rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.input {
+  width: 40rem;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  border-radius: 0.5rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+
+  font-size: 1.2rem;
+  font-family: 'Roboto' sans-serif;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);;
+  text-align: left;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: white;
+  color: white;
+}
+
+.textarea {
+  width: 40rem;
+  height: 10rem;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  border-radius: 0.5rem;
+  margin-bottom: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+
+  font-size: 1.2rem;
+  font-family: 'Roboto' sans-serif;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+.textarea:focus {
+  border-color: white;
+  color: white;
+}
+
+.contactreturn {
+  position: absolute;
+  padding: 2rem;
+  font-size: 2.2rem;
+  font-weight: 100;
+  color: #eaeaea;
+  text-align: center;
+  top: 45vh;
+}
+
+.contactreturn1 {
+  position: absolute;
+  padding: 2rem;
+  font-size: 3.2rem;
+  font-weight: 100;
+  color: #eaeaea;
+  text-align: center;
+  top: 20vh;
+}
+
+.contactImage {
+  object-fit: 'cover';
+  z-index: -1;
+  height: '100%';
+  width: '100%';
+  position: 'absolute';
+  bottom: 0;
+  opacity: 0.5;
+  filter: 'blur(4px)';
+  transition: background 1s ease-in-out;
 }

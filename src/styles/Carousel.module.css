@@ -1,10 +1,10 @@
 .embla {
-    max-width: 60rem;
-    min-height: 60rem;
+    max-width: 50rem;
+    min-height: 40rem;  
     margin: auto;
     position: relative;
     top: 0;
-    --slide-height: 35rem;
+    --slide-height: 30rem;
     --slide-spacing: 0rem;
     --slide-size: 100%;
 }

@@ -47,30 +47,38 @@ const Projects = () => {
 
     useEffect(() => {
         const project = document.querySelector(`.${styles.projectPopup}`)
-				const graph = document.querySelector("svg")
+        const graph = document.querySelector("svg")
         if (project) {
             const timeoutId = setTimeout(() => {
                 project.classList.add(styles.visible);
             }, 20);
+
             project.addEventListener('mousemove', (e) => {
-                myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event))
-            })
-						document.addEventListener('mousedown', (event) => {
-							event.stopPropagation();
-							console.log(event.target)
-							console.log(graph)
-							if (event.target === myFluid.canvas || event.target === graph) {
-									handleClick();
-							}
-						});
+                myFluid.canvas.dispatchEvent(new MouseEvent('mousemove', event));
+            });
+            const handleMouseDown = (event) => {
+                event.stopPropagation();
+                console.log(event.target);
+                console.log(graph);
+                if (!(event.target === myFluid.canvas || event.target === graph || (project.contains(event.target)))) {
+                    console.log("toggling");
+                    handleClick();
+                }   
+            };
+
+            document.addEventListener('mousedown', handleMouseDown);
+            return () => {
+            document.removeEventListener('mousedown', handleMouseDown);
+            };
         }
-    }, [context.isVisible1, context.isVisible2, context.isVisible3, context.isVisible4])
+
+    }, [context])
 
     return (
         <>
             {context.isVisible1 && (
                 <div className={`${styles.projectPopup}`}>
-										<h1 style ={{fontWeight: "400"}}>Virtual Refrigerator</h1>
+                    <h1 style ={{fontWeight: "400"}}>Virtual Refrigerator</h1>
                     <Link href = "https://virtual-fridge-9vs8.onrender.com" target="_blank" rel="noopener noreferrer">
                         <Image
                             src = "/fridgedemo.gif"
@@ -93,7 +101,7 @@ const Projects = () => {
             )}
             {context.isVisible2 && (
                 <div className={`${styles.projectPopup}`}>
-										<h1 style ={{fontWeight: "400"}}>Scrambler</h1>
+                    <h1 style ={{fontWeight: "400"}}>Scrambler</h1>
                     <Image
                         src = "/scramblerdemo.gif"
                         width = {0}

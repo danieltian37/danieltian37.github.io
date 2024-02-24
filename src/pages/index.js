@@ -11,6 +11,7 @@ import FluidSim from '../components/fluidsim';
 import Personal from '../components/personal';
 import Script from 'next/script';
 import Down from '../components/down.js';
+import Contact from '../components/contact.js';
 
 export default function Home() {
   return (
@@ -28,9 +29,9 @@ export default function Home() {
           <About/>
 
           <div className={`${styles.container} ${styles.projects}`} id="Projects">
-              <Down link="#Projects" color="black"/>
-            <p className={styles.projectTitle}><i>Projects</i></p>
-            <p className={styles.projectIntro}>Play around with my work!</p>
+            <Down link="#Projects" color="black"/>
+            <p className={styles.projectTitle}><i>Personal Portfolio</i></p>
+            <p className={styles.projectIntro}>Play with my projects!</p>
             <div className={styles.rotate}>
                   <Nodes/>
             </div>
@@ -43,15 +44,13 @@ export default function Home() {
 
           
 
-          <div className={styles.container} id = "Contact">
-            <p>hi im cool</p>
-          </div>
+          <Contact/>
         </main>
 
 
         <style jsx>{`
           main {
-            padding: 5rem 0;
+            padding: 5rem 0 0 0;
             flex: 1;
             display: flex;
             flex-direction: column;

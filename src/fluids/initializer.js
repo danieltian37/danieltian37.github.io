@@ -230,6 +230,11 @@ export function initWebGL(canvas){
     }
 }
 
+const handlePause = () => {
+    const PARAMS = defaults.behavior;
+    PARAMS.paused = !PARAMS.paused;
+}
+
 export function activator(canvas, webGL, colorFormat, PROGRAMS, pointers) {
     if(active) {
         let nPointers = [];
@@ -241,7 +246,7 @@ export function activator(canvas, webGL, colorFormat, PROGRAMS, pointers) {
 
     /* TODO: Retrieve haul style */
     const PARAMS = defaults.behavior;
-
+    
     let bloomFrameBuffers = [];
     let splatStack = [];
 
@@ -800,15 +805,6 @@ export function activator(canvas, webGL, colorFormat, PROGRAMS, pointers) {
         pointers[0].color = generateColor();
         console.log(e, "dragged")
     });
-
-
-    window.addEventListener('keydown', e => {
-        if (e.code === 'KeyP')
-            PARAMS.paused = !PARAMS.paused;
-        if (e.key === ' ')
-            splatStack.push(parseInt(Math.random() * 20) + 5);
-        console.log(e)
-    });
 }
 
 /**
@@ -892,3 +888,5 @@ class Pointer {
         this.color = [30, 0, 300];
     }
 }
+
+export default handlePause;

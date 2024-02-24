@@ -1,10 +1,15 @@
 import styles from '../styles/Home.module.css';
 import React, { useEffect, useRef, useState } from 'react';
 import Down from './down.js';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Intro = () => {
     const observedElementRef = useRef(null);
     const targetElementRef = useRef(null);
+
+    const [githubSrc, setGithubSrc] = useState('/github.svg');
+
     useEffect(() => {
       const elements = targetElementRef.current;
       const first = document.querySelector(`.${styles.first}`);
@@ -14,10 +19,8 @@ const Intro = () => {
         const handleIntersection = (entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    console.log("not here")
                     elements.classList.remove(styles.background);
                 } else {
-                    console.log("here")
                     elements.classList.add(styles.background);
                 }
             });
@@ -57,10 +60,8 @@ const Intro = () => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add(styles.show);
-                        console.log("hi")
                     } else {
                         entry.target.classList.remove(styles.show);
-                        console.log("bye")
                     }
                 });
             };
@@ -92,8 +93,10 @@ const Intro = () => {
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) {
                         header.classList.add(styles.scrolled);
+                        setGithubSrc('/github-light.svg');
                     } else {
                         header.classList.remove(styles.scrolled);
+                        setGithubSrc('/github.svg');
                     }
                 });
             };
@@ -119,6 +122,22 @@ const Intro = () => {
         <>
             <div className={styles.header}>
                 <a href="#" className={styles.site_logo} aria-label="homepage">DANIEL TIAN</a>
+                <Link href="https://www.linkedin.com/in/danieljtian/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src = "/linkedin.svg"
+                        width = {30}
+                        height = {30}
+                        className={styles.linkedin}
+                    />
+                </Link>
+                <Link href="https://github.com/danieltian37/" target="_blank" rel="noopener noreferrer">
+                    <Image
+                        src = {githubSrc}
+                        width = {30}
+                        height = {30}
+                        className={styles.github}
+                    />
+                </Link>
                 <nav>
                 <ul className={styles.nav__list}>
                     <li className={styles.nav__list}>
@@ -152,7 +171,6 @@ const Intro = () => {
                 <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Developer</a>
                 <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Designer</a>
                 <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>Dreamer.</i></b></a>
-                <Down children="#About"/>
             </div>
             
 
