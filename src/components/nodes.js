@@ -142,7 +142,7 @@ const createGraph = (nodesData, linksData, showFridge, showScrambler, showMonopo
         d3.select(this)
           .transition()
           .duration('100')
-          .attr("filter", "drop-shadow(4px 6px 3px rgb(0 0 0 / 0.4))")
+          .attr("filter", "drop-shadow(0px 0px 10px rgb(137 207 240 / 0.8))")
         
         infoPanel.transition()
           .duration(100)

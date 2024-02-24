@@ -1,5 +1,6 @@
 import styles from '../styles/Home.module.css';
 import React, { useEffect, useRef, useState } from 'react';
+import Down from './down.js';
 
 const Intro = () => {
     const observedElementRef = useRef(null);
@@ -139,7 +140,9 @@ const Intro = () => {
                 </nav>
             </div>
 
-            <container className={styles.homeintro} ref={targetElementRef}>
+            <container className={styles.homeintro} ref={targetElementRef} 
+                // style = {{background: 'rgba(36, 42, 48, 0.2) url(https://i.ibb.co/HTXqPP5/daniel-tian-website-2.jpg)'}}
+                >
             </container>
 
             <div className={styles.intro}>
@@ -149,7 +152,9 @@ const Intro = () => {
                 <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Developer</a>
                 <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Designer</a>
                 <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>Dreamer.</i></b></a>
+                <Down children="#About"/>
             </div>
+            
 
             
 

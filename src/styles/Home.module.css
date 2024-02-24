@@ -1,14 +1,16 @@
 .container {
+  vertical-align: top;
   min-height: 120vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: flex-start;
   align-items: center;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   z-index: 1;
   background-color: #28282B;
+  overflow: hidden;
 }
 
 .title a {
@@ -108,7 +110,7 @@
 
 .rotate {
   transform: rotate3d(1, 0, 0, -70deg);
-  top: -25%;
+  top: -30rem;
   margin-left: 7vw;
   margin-bottom: 0vh;
   z-index : 1;
@@ -175,7 +177,7 @@
 
 .homeintro {
   padding: 50vh 0;
-  background: rgba(36, 42, 48, 0.2) url(https://i.ibb.co/HTXqPP5/daniel-tian-website-2.jpg);
+  background: rgba(36, 42, 48, 0.2) url(../../public/daniel_tian_website-2.jpg);
   background-size: cover !important;
   background-position: center !important;
   background-blend-mode: soft-light !important;
@@ -200,10 +202,11 @@
   text-align: center;
   font-family: "Roboto", sans-serif;
   justify-content: center;
+  overflow: visible;
 }
 
 .first.show {
-  background-color: #d6e4ec;
+  background-color: #fbfbfb;
   transition: background-color 2s ease-in-out;
 }
 
@@ -219,7 +222,6 @@
   margin: 0 auto;
   background: transparent;
   z-index: 1;
-
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -230,13 +232,13 @@
   margin: 0 0 0 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
-  font-size: 8vh;
+  font-size: 3.8rem;
   font-weight: 80;
   letter-spacing: 2vw;
   color: #f4f4f4;
   position: relative;
   text-transform: uppercase;
-  top: 15.6vh;
+  top: 19%;
   left: 0vh;
   text-align: center;
 }
@@ -251,12 +253,12 @@
   position: relative;
   font-family: "Roboto" sans-serif;
   font-weight: 300;
-  font-size: 4vh;
+  font-size: 2rem;
   letter-spacing: 0.1rem;
   top: 18vh;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, text-shadow 0.4s ease-in-out;;
 }
 
 .introsub.show {
@@ -265,12 +267,13 @@
 
 .introsub:hover {
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+  transition: text-shadow 0.2s ease-in-out;
 }
 
 .title {
   margin: 45vh 0 0 0;
   line-height: 1.15;
-  font-size: 12vh;
+  font-size: 15vh;
   position: absolute;
   font-family: "Roboto" sans-serif;
   font-weight: 100;
@@ -283,11 +286,10 @@
 }
 
 .title.show {
-  font-size: 8vh;
-  top: 0vh;
+  font-size: 4rem;
+  top: -12rem;
   color: #28282B;
   padding: 0 0 0 0;
-  margin: 18vh 0 0 0;
   transition: font-size 2s ease-in, color 2s ease-in, top 2s ease-in, margin 2s ease-in;
 }
 
@@ -315,22 +317,22 @@
 
 .aboutexperience {
   position: relative;
-  top: 0vh;
-  left: 2vw;
+  top: 0;
+  left: 2rem;
   display: flex;
   flex-direction: row;
   color: #28282B;
-  gap: 10vw;
+  gap: 4rem;
   text-align: left;
-  font-size: 2.5vh;
+  font-size: 1.1rem;
   font-weight: 200;
 }
 
 .table {
   position: relative;
-  top: 0vw;
+  top: -1.5rem;
   border-collapse: separate;
-  border-spacing: 1.5vw;
+  border-spacing: 1.2rem;
 }
 
 .abouttitle {
@@ -340,16 +342,18 @@
 }
 .experiencetext {
   padding: 0 0 0 0;
-  line-height: 3.5vh;
+  line-height: 1.5rem;
   cursor: pointer;
 }
 .experiences {
-  text-shadow: #89b9f1 0px 0px 4px;
+  text-shadow: #89b9f1 0px 0px 5px;
+  transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .experiences:hover {
-  text-shadow: #28282B 0px 0px 10px;
+  text-shadow: #28282B 0px 0px 20px;
   color: white;
+  transition: text-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .experiencebox {
@@ -384,15 +388,16 @@
 }
 
 .projects {
+  overflow: visible;
   background-color: #0f0f0f;
   color: black;
   height: 120vh;
 }
 
 .projectTitle {
-  margin: 18vh 0 -24vh 0;
+  margin: 10rem 0 0 0;
   line-height: 1.15;
-  font-size: 10vh;
+  font-size: 4rem;
   font-family: "Roboto" sans-serif;
   font-weight: 100;
   background-color: transparent;
@@ -405,8 +410,7 @@
 
 .projectIntro {
   position: relative;
-  margin: 0vh 0vh -6vh 0vh;
-  top: 28vh;
+  margin: 2rem 0 0 0;
   color: white;
   z-index: 3;
   font-weight: 100;
@@ -468,13 +472,14 @@
   overflow: hidden;
 }
 .personal {
-  background-color: #d6e4ec;
+  background-color: #fbfbfb;
   color: #28282B;
   font-size: 2.5vh;
   font-weight: 300;
   padding: 0 0 0 0;
   text-align: center;
   opacity: 1;
+  overflow: visible;
   transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
@@ -494,4 +499,37 @@
   font-size: 1.5em;
   font-weight: 300;
 
+}
+.carousel {
+  display: flex;
+  flex-direction: row;
+}
+.carouselTitle {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 4.5rem;
+  color: #28282B;
+  margin: 0 -11rem 0 -18rem;
+  transform: rotate(-90deg) translateX(-51%);
+  height: 0;
+}
+
+.button__svg {
+  width: 3rem;
+  height: 3rem;
+  rotate: -90deg;
+  transition: width 0.2s, height 0.2s;
+}
+.button__svg:hover {
+  width: 3.3rem;
+  height: 3.3rem;
+  transition: width 0.2s, height 0.2s;
+}
+
+.downButton {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: -5rem;
+  cursor: pointer;
+  z-index: 2;
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from '../styles/Home.module.css';
-import Faders from '../components/faders.js';
+import Faders from './faders.js';
 import Image from 'next/image';
+import Down from './down.js';
 
 const About = () => {
     const [expOne, setExpOne] = useState(false);
@@ -112,9 +113,10 @@ const About = () => {
 
     return (
     <>
-        <div className={[styles.container, styles.first].join(" ")} id="About" ref={container}> 
+        <div className={[styles.container, styles.first].join(" ")} id="About" ref={container}>
+        <Down link="#About" color="white"/>
           <h1 className={styles.title}>
-            Who am I?
+            <i>Who am I?</i>
           </h1>
 
           <h2 className={styles.aboutme}>
@@ -205,13 +207,13 @@ const ExperienceOne = () => {
                     alt = "Picture of WebDecide"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Developed web app WebDecide, an interactive knowledge-base visualization using Stack Overflow data hosted on MongoDB facilitating deep learning model compatibility checks, version searches, exploration with references
+                    — Developed WebDecide, an interactive knowledge base D3.js visualization for data crawled from Stack Overflow 
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Enhanced React & D3.js knowledge graph with security insights, represented security features and vulnerabilities
+                    — Created functions to check deep learning model compatibility, search versions, explore with references
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Implemented semantic search to refine user experience, streamline accessibility to relevant information
+                    — Migrated 1,438 nodes formatted in Neo4j to RDF, allowing for efficient SPARQL queries
                 </p>
             </div>
         </>
@@ -234,7 +236,7 @@ const ExperienceTwo = () => {
                     — Spearheaded development and deployment of company apps using Tulip and PowerBi, in order to align with business objectives to streamline processes, improve operational, employee efficiency
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Collaborated closely in Agile framework with a small cross-functional team to understand requirements, design custom solutions, and ensure seamless integration into existing workflows
+                    — Collaborated closely in Lean-Agile optimization with a small cross-functional team to deliver requirements, design custom solutions, and ensure seamless integration into existing workflows
                     </p>
             </div>
         </>
