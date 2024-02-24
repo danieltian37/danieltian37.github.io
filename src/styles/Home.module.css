@@ -535,7 +535,7 @@
   font-family: 'Times New Roman', Times, serif;
   font-size: 4rem;
   color: #28282B;
-  margin: 0 -11rem 0 -18rem;
+  margin: 0 -9.5rem 0 -18rem;
   transform: rotate(-90deg) translateX(-51%);
   height: 0;
 }
@@ -665,7 +665,7 @@
   font-size: 1.2rem;
   font-family: 'Roboto' sans-serif;
   font-weight: 100;
-  color: rgba(255, 255, 255, 0.5);;
+  color: rgba(255, 255, 255, 0.7);;
   text-align: left;
   transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 }

@@ -5,10 +5,6 @@ import styles from '../styles/Home.module.css';
 function ContactForm() {
   const [state, handleSubmit] = useForm("mnqevjna");
 
-
-
-
-
   if (state.succeeded) {
       return <>
             <p className={styles.contactreturn1}>Thank you for reaching out!</p>
