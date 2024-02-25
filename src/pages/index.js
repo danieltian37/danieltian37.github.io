@@ -19,7 +19,7 @@ export default function Home() {
       <div className={styles.container}>
         <Head>
           <title>Daniel Tian</title>
-          <link rel="icon" href="https://i.pinimg.com/originals/e4/08/9e/e4089e5007c2177db368470329a6e5be.jpg" />
+          <link rel="icon" href="https://i.ibb.co/SBjYMzp/Screenshot-2024-02-24-at-6-16-22-PM-modified.png" />
           <link href="./styles/global.css" rel="stylesheet"></link>
         </Head>
 
