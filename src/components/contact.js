@@ -5,34 +5,12 @@ import Down from './down';
 import ContactForm from './contactform';
 
 const Contact = () => {
-    const words = [
-        "/contact/c1.JPG", "/contact/c2.jpg", "/contact/advnt.jpg",
-        "/contact/c4.JPG", "/contact/c5.JPG", "/contact/fountain.jpg"
-    ]
-    const [currWord, setCurrWord] = useState(words[0]);
-    const [isActive, setIsActive] = useState(true);
-
-    const index = useRef(0);
-    useEffect(() => {
-        let interval = null;
-        if (isActive) {
-            interval = setInterval(() => {
-                index.current++;
-                setCurrWord(words[index.current]);
-                if (index.current === words.length) {
-                    index.current = 0;
-                    setCurrWord(words[0]);
-                }
-            }, 5000);
-        }
-        return () => clearInterval(interval);
-    });
 
     return (<div className={`${styles.container} ${styles.contact}`} id = "Contact">
             <Down link="#Contact" color="black"/>
             <ContactForm/>
                 <Image
-                src = {currWord}
+                src = '/contact/fountain.jpg'
                 width = {0}
                 height = {0}
                 loading = "lazy"

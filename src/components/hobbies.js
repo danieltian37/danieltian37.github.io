@@ -31,7 +31,7 @@ const Hobbies = () => {
         </div>
             <p className={styles.personalintro}>
                 I spend a lot of free time learning. I'm nowhere near the best or most decorated at what I do, but I like the process of picking stuff up,
-                feeling accomplishment in adding a little something everyday.
+                feeling the accomplishment of adding a little something everyday.
             </p>
 
             <p className={styles.hobbiesend}>
