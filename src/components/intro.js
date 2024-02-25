@@ -40,12 +40,11 @@ const Intro = () => {
 
     useEffect(() => {
         const targetElement = targetElementRef.current;
-        targetElement.style.background = `rgba(36, 42, 48, ${transparency > 0.9 ? 1 : 0.1 + transparency}) url(/daniel-tian-website-2.jpg)`;
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const transparency = scrollPosition / 500;
 
-            targetElement.style.background = `rgba(36, 42, 48, ${transparency > 0.9 ? 1 : 0.1 + transparency}) url(/daniel-tian-website-2.jpg)`;
+            targetElement.style.background = `rgba(36, 42, 48, ${0.1 + transparency}) url(https://i.ibb.co/HTXqPP5/daniel-tian-website-2.jpg)`;
         };
         window.addEventListener('scroll', handleScroll);
         return () => {
