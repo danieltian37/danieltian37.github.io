@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Down from './down.js';
 import Link from 'next/link';
 import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
+
 
 const Intro = () => {
     const observedElementRef = useRef(null);
@@ -136,16 +138,13 @@ const Intro = () => {
                 >
             </container>
             
-            <div style={{ position: 'fixed', width: '100vw', height: 'auto', zIndex: "-1" }}>
-            <Image
-                src = "/daniel_tian_website-2.jpg"
-                width = {0}
-                height = {0}
-                sizes = {"100vw"}
-                style = {{ position: 'absolute', top:'-7rem', width: 'auto', height: 'auto', opacity: 1 }}
-                loading = "eager"
-                objectFit='cover'
-            />
+            <div className={styles.backgroundpic}>
+                <img
+                    src = "/daniel_tian_website-2.jpg"
+                    width = "100%"
+                    loading = "eager"
+                    objectFit='contain'
+                />
             </div>
 
             <div className={styles.intro}>
