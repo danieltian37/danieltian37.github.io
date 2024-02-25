@@ -10,41 +10,42 @@ const Intro = () => {
 
     const [githubSrc, setGithubSrc] = useState('/github.svg');
 
-    useEffect(() => {
-      const elements = targetElementRef.current;
-      const first = document.querySelector(`.${styles.first}`);
-      console.log(first)
-      console.log(elements)
-      if (observedElementRef && targetElementRef) {
-        const handleIntersection = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    elements.classList.remove(styles.background);
-                } else {
-                    elements.classList.add(styles.background);
-                }
-            });
-        };
-        const intersectionObserver = new IntersectionObserver(handleIntersection, {
-            threshold: 0.12,
-            rootMargin: "-" + document.documentElement.clientHeight * 0.5 + "px " + document.documentElement.clientHeight * 0.5 + "px " + document.documentElement.clientHeight * 0.80 +  "px " + document.documentElement.clientHeight * 0.8 + "px",
-        });
+    // useEffect(() => {
+    //   const elements = targetElementRef.current;
+    //   const first = document.querySelector(`.${styles.first}`);
+    //   console.log(first)
+    //   console.log(elements)
+    //   if (observedElementRef && targetElementRef) {
+    //     const handleIntersection = (entries, observer) => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 elements.classList.remove(styles.background);
+    //             } else {
+    //                 elements.classList.add(styles.background);
+    //             }
+    //         });
+    //     };
+    //     const intersectionObserver = new IntersectionObserver(handleIntersection, {
+    //         threshold: 0.12,
+    //         rootMargin: "-" + document.documentElement.clientHeight * 0.5 + "px " + document.documentElement.clientHeight * 0.5 + "px " + document.documentElement.clientHeight * 0.80 +  "px " + document.documentElement.clientHeight * 0.8 + "px",
+    //     });
 
-        intersectionObserver.observe(first);
+    //     intersectionObserver.observe(first);
 
-        return () => {
-            intersectionObserver.unobserve(first);
-        };
-      }
-    }, []);
+    //     return () => {
+    //         intersectionObserver.unobserve(first);
+    //     };
+    //   }
+    // }, []);
 
     useEffect(() => {
         const targetElement = targetElementRef.current;
+        targetElement.style.background = `rgba(36, 42, 48, ${transparency > 0.9 ? 1 : 0.1 + transparency}) url(/daniel-tian-website-2.jpg)`;
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const transparency = scrollPosition / 500;
 
-            targetElement.style.background = `rgba(36, 42, 48, ${0.1 + transparency}) url(https://i.ibb.co/HTXqPP5/daniel-tian-website-2.jpg)`;
+            targetElement.style.background = `rgba(36, 42, 48, ${transparency > 0.9 ? 1 : 0.1 + transparency}) url(/daniel-tian-website-2.jpg)`;
         };
         window.addEventListener('scroll', handleScroll);
         return () => {
