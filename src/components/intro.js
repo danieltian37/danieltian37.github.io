@@ -95,23 +95,25 @@ const Intro = () => {
     return (
         <>
             <div className={styles.header}>
-                <a href="#" className={styles.site_logo} aria-label="homepage">DANIEL TIAN</a>
-                <Link href="https://www.linkedin.com/in/danieljtian/" target="_blank" rel="noopener noreferrer">
-                    <Image
-                        src = "/linkedin.svg"
-                        width = {30}
-                        height = {30}
-                        className={styles.linkedin}
-                    />
-                </Link>
-                <Link href="https://github.com/danieltian37/" target="_blank" rel="noopener noreferrer">
-                    <Image
-                        src = {githubSrc}
-                        width = {30}
-                        height = {30}
-                        className={styles.github}
-                    />
-                </Link>
+                <div style = {{ display: "flex", alignItems: "center"}}>
+                    <a href="#" className={styles.site_logo} aria-label="homepage">DANIEL TIAN</a>
+                    <Link href="https://www.linkedin.com/in/danieljtian/" target="_blank" rel="noopener noreferrer">
+                        <Image
+                            src = "/linkedin.svg"
+                            width = {30}
+                            height = {30}
+                            className={styles.linkedin}
+                        />
+                    </Link>
+                    <Link href="https://github.com/danieltian37/" target="_blank" rel="noopener noreferrer">
+                        <Image
+                            src = {githubSrc}
+                            width = {30}
+                            height = {30}
+                            className={styles.github}
+                        />
+                    </Link>
+                </div>
                 <nav>
                 <ul className={styles.nav__list}>
                     <li className={styles.nav__list}>

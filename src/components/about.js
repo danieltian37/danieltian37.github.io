@@ -44,7 +44,7 @@ const About = () => {
             });
         };
         const intersectionObserver = new IntersectionObserver(handleIntersection, {
-            threshold: 0.03,
+            threshold: 0.01,
             // rootMargin: "-" + 0.2 * height + "px -" + 0.4 * width + "px -" + 0.2 * height + "px -" + 0.4 * width + "px",
             rootMargin: "0px -" + 0.4 * width + "px 0px -" + 0.4 * width + "px"
         });
