@@ -6,7 +6,8 @@ import ContactForm from './contactform';
 
 const Contact = () => {
 
-    return (<div className={`${styles.container} ${styles.contact}`} id = "Contact">
+    return (
+    <div className={`${styles.container} ${styles.contact}`} id = "Contact">
             <Down link="#Contact" color="black"/>
             <ContactForm/>
                 <Image
@@ -17,7 +18,9 @@ const Contact = () => {
                 style = {{objectFit: 'cover', zIndex: -1, height: '100%', width: '100%', position: 'absolute', bottom: 0, opacity: 0.5, filter: 'blur(4px)', transition: 'all 2s ease-in-out'}}
                 sizes = "100vw"
                 />
-          </div>)
+        <p className={styles.copyright}>Copyright © 2024 Daniel Tian. All rights reserved.</p>
+    </div>
+          )
 }
 
 export default Contact;
