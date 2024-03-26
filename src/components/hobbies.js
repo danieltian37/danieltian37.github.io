@@ -38,7 +38,7 @@ const Hobbies = () => {
                 But most of all, I love to connect.
             </p>
             <p className={styles.personalconclusion}>
-                I like to learn from, talk to, and help teach people.
+                I love to learn from, talk to, and help teach people.
                 All that I like would be no fun without what I love.
                 I truly believe that everyone's got a story to tell, a voice to be heard, and a lesson to teach.
                 <br/><br/>That goes for you, too! I'd love to hear from you below!
