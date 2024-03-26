@@ -391,12 +391,6 @@
   text-indent: -20px;
 }
 
-.aboutSummary {
-  width: 50%;
-  color: #28282B;
-  font-size: 2.5vh;
-  font-weight: 300;
-}
 
 .projects {
   overflow: visible;
@@ -425,7 +419,7 @@
   color: white;
   z-index: 3;
   font-weight: 100;
-  font-size: 3.5vh;
+  font-size: 2rem;
   pointer-events: none;
 }
 
@@ -442,7 +436,7 @@
   padding: 1vh 1vw 1vh 1vw;
   color: white;
   font-weight: 200;
-  font-size: 1.3vw;
+  font-size: 1rem;
   text-align: center;
   z-index: 5;
   opacity: 0;
@@ -485,7 +479,7 @@
 .personal {
   background-color: #FAF9F6;
   color: #28282B;
-  font-size: 2.5vh;
+  font-size: 1.2rem;
   font-weight: 300;
   padding: 0 0 0 0;
   text-align: center;
@@ -498,7 +492,7 @@
 .personaltitle {
   margin: 15vh 0 6vh 0;
   line-height: 1.15;
-  font-size: 10vh;
+  font-size: 4rem;
   font-family: "Roboto" sans-serif;
   font-weight: 200;
   background-color: transparent;
