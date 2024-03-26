@@ -741,6 +741,8 @@
 }
 
 .copyright {
+  text-align: center;
+  line-height: 2rem;
   position: absolute;
   font-size: 1.2rem;
   font-weight: 100;

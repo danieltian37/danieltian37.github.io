@@ -18,7 +18,10 @@ const Contact = () => {
                 style = {{objectFit: 'cover', zIndex: -1, height: '100%', width: '100%', position: 'absolute', bottom: 0, opacity: 0.5, filter: 'blur(4px)', transition: 'all 2s ease-in-out'}}
                 sizes = "100vw"
                 />
-        <p className={styles.copyright}>Copyright © 2024 Daniel Tian. All rights reserved.</p>
+        <p className={styles.copyright}>
+            Made using Next, WebGL, D3.js, and Embla Carousel.
+            <br></br>
+            Copyright © 2024 Daniel Tian. All rights reserved.</p>
     </div>
           )
 }
