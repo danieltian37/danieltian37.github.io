@@ -50,7 +50,8 @@ export default function Home() {
 
         <style jsx>{`
           main {
-            padding: 5rem 0 0 0;
+            margin: 5rem 0 0 0;
+            padding: 0 0 0 0;
             flex: 1;
             display: flex;
             flex-direction: column;

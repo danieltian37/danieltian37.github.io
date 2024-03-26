@@ -143,7 +143,7 @@ const Intro = () => {
             <div className={styles.backgroundpic}>
                 <img
                     src = "/daniel_tian_website-2.jpg"
-                    width = "100%"
+                    height = "100%"
                     loading = "eager"
                     objectFit='contain'
                 />
