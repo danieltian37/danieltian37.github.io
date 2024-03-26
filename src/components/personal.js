@@ -28,7 +28,9 @@ const Personal = () => {
                 </p>
                 <hr style={{width: "30rem", margin: "4rem"}}></hr>
                 <div className={styles.carousel}>
-                    <p className={styles.carouselWriting}>WRITING</p>
+                    <div style={{display: 'flex', position: 'relative', alignItems: 'center'}}>
+                        <p className={styles.carouselWriting}>WRITING</p>
+                    </div>
                     <Carousel slides={WRITING} options={OPTIONS} id="writing"/>
                     <p className={styles.personalwriting}>
                     Writing is another passion of mine. It's a way for me to express myself and what I've gathered in my short time here. In the past, I worked on my high school's award-winning newspaper,

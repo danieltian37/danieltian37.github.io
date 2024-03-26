@@ -1,6 +1,6 @@
 .container {
   vertical-align: top;
-  min-height: 102vh;
+  min-height: 49rem;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -544,7 +544,7 @@
   font-size: 4.5rem;
   color: #28282B;
   margin: 0 -4rem 0 -11rem;
-  transform: rotate(-90deg) translateX(-61%);
+  transform: rotate(-90deg) translateX(15%);
   height: 0;
 }
 
