@@ -118,6 +118,7 @@ const GlobalContextProvider = ({ children }) => {
             clicked,
         }}>
             {children}
+
         </GlobalContext.Provider>
     );
 };
