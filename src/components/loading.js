@@ -18,11 +18,13 @@ export default function LoadingIcon() {
             const icon = document.querySelector(`.${styles.icon}`)
             console.log(layout, icon)
             if (isLoaded && layout && icon) {
-                layout.classList.add(styles.fade)
-                icon.classList.add(styles.fade)
-
                 setTimeout(() => {
-                    setBuffer(false);
+                    layout.classList.add(styles.fade)
+                    icon.classList.add(styles.fade)
+
+                    setTimeout(() => {
+                        setBuffer(false);
+                    }, 1000);
                 }, 1000);
             }
         }
