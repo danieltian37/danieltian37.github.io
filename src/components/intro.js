@@ -11,6 +11,7 @@ const Intro = () => {
     const observedElementRef = useRef(null);
     const targetElementRef = useRef(null);
     const { setIsLoaded } = useContext(GlobalContext);
+    const [scrolled, setScrolled] = useState(false);
 
     const [githubSrc, setGithubSrc] = useState('/github.svg');
 
@@ -70,9 +71,12 @@ const Intro = () => {
                     if (!entry.isIntersecting) {
                         header.classList.add(styles.scrolled);
                         setGithubSrc('/github-light.svg');
+                        setScrolled(true);
+
                     } else {
                         header.classList.remove(styles.scrolled);
                         setGithubSrc('/github.svg');
+                        setScrolled(false);
                     }
                 });
             };
@@ -142,9 +146,9 @@ const Intro = () => {
                 >
             </container>
             
-            <div className={styles.backgroundpic}>
+            <div className={styles.backgroundpic} style = {{backgroundColor: "#28282B"}}>
                 <img
-                    src = "/daniel_tian_website-2.jpg"
+                    src = {scrolled ? "" : "/daniel_tian_website-2.jpg"}
                     height = "100%"
                     loading = "eager"
                     objectFit='contain'
