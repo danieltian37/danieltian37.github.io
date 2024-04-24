@@ -17,7 +17,7 @@ const Personal = () => {
     return (
         <div className={`${styles.container} ${styles.personal}`} id = "Personal"> 
                 <Down link="#Personal" color="white"/>
-                <p className={styles.personaltitle}><i>Passions in Passing</i></p>
+                <p className={styles.personaltitle}><i>passions in passing</i></p>
                 <div className={styles.carousel}>
                     <p className={styles.carouselTitle}>PHOTOGRAPHY</p>
                     <Carousel slides={SLIDES} options={OPTIONS} id ="photography"/>

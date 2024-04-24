@@ -1,14 +1,16 @@
 import styles from '../styles/Home.module.css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 import Down from './down.js';
 import Link from 'next/link';
 import Image from 'next/image';
+import GlobalContext from '../context/globalcontext.js';
 /* eslint-disable @next/next/no-img-element */
 
 
 const Intro = () => {
     const observedElementRef = useRef(null);
     const targetElementRef = useRef(null);
+    const { setIsLoaded } = useContext(GlobalContext);
 
     const [githubSrc, setGithubSrc] = useState('/github.svg');
 
@@ -146,6 +148,7 @@ const Intro = () => {
                     height = "100%"
                     loading = "eager"
                     objectFit='contain'
+                    onLoad={setIsLoaded(true)}
                 />
             </div>
 
@@ -153,9 +156,9 @@ const Intro = () => {
                 <h1 className={styles.introname}>
                     Daniel Tian
                 </h1>
-                <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Developer</a>
-                <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> Designer</a>
-                <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>Dreamer.</i></b></a>
+                <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> developer</a>
+                <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> designer</a>
+                <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>dreamer.</i></b></a>
             </div>
             
 

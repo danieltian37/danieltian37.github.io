@@ -1,21 +1,32 @@
 import styles from '../styles/Loading.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import GlobalContext from '../context/globalcontext.js';
 
-export default function LoadingIcon({ isLoading }) {
+export default function LoadingIcon() {
     const [buffer, setBuffer] = useState(true)
+    const { isLoaded, setIsLoaded } = useContext(GlobalContext);
 
     useEffect(() => {
-        const layout = document.querySelector(`.${styles.layout}`)
-        const icon = document.querySelector(`.${styles.icon}`)
-        if (!isLoading && layout && icon) {
-            layout.classList.add(styles.fade)
-            icon.classList.add(styles.fade)
-
-            setTimeout(() => {
-                setBuffer(false);
-            }, 1000);
+        if (isLoaded) {
+            setBuffer(false);
         }
-    }, [isLoading]);
+    }, []);
+
+    useEffect(() => {
+        if (isLoaded) {
+            const layout = document.querySelector(`.${styles.layout}`)
+            const icon = document.querySelector(`.${styles.icon}`)
+            console.log(layout, icon)
+            if (isLoaded && layout && icon) {
+                layout.classList.add(styles.fade)
+                icon.classList.add(styles.fade)
+
+                setTimeout(() => {
+                    setBuffer(false);
+                }, 1000);
+            }
+        }
+    }, [isLoaded]);
  
     return (
         <>

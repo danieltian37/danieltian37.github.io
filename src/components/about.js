@@ -8,20 +8,36 @@ const About = () => {
     const [expOne, setExpOne] = useState(false);
     const [expTwo, setExpTwo] = useState(false);
     const [expThree, setExpThree] = useState(false);
+    const [oneClicked, setOneClicked] = useState(false);
+    const [twoClicked, setTwoClicked] = useState(false);
+    const [threeClicked, setThreeClicked] = useState(false);
+
     const clickOne = () => {
+        setOneClicked(true);
+
         setExpOne(true);
         setExpTwo(false);
         setExpThree(false);
+        setTwoClicked(false);
+        setThreeClicked(false);
     }
     const clickTwo = () => {
+        setTwoClicked(true);
+
         setExpOne(false);
         setExpTwo(true);
         setExpThree(false);
+        setOneClicked(false);
+        setThreeClicked(false);
     }
     const clickThree = () => {
+        setThreeClicked(true);
+
         setExpOne(false);
         setExpTwo(false);
         setExpThree(true);
+        setOneClicked(false);
+        setTwoClicked(false);
     }
     const container = useRef(null);
 
@@ -78,6 +94,9 @@ const About = () => {
                         setExpOne(false);
                         setExpTwo(false);
                         setExpThree(false);
+                        setOneClicked(false);
+                        setTwoClicked(false);
+                        setThreeClicked(false);
                     }, 200);
                 }
             }
@@ -90,6 +109,9 @@ const About = () => {
                     setExpOne(false);
                     setExpTwo(false);
                     setExpThree(false);
+                    setOneClicked(false);
+                    setTwoClicked(false);
+                    setThreeClicked(false);
                 }, 200);
             }
         };
@@ -111,37 +133,61 @@ const About = () => {
         };
     }, [expOne, expTwo, expThree])
 
+    const handleMouseLeaveOne = () => {
+        if (!oneClicked) {
+            setExpOne(false);
+        }
+    }
+    const handleMouseLeaveTwo = () => {
+        if (!twoClicked) {
+            setExpTwo(false);
+        }
+    }
+    const handleMouseLeaveThree = () => {
+        if (!threeClicked) {
+            setExpThree(false);
+        }
+    }
+
     return (
     <>
         <div className={[styles.container, styles.first].join(" ")} id="About" ref={container}>
         <Down link="#About" color="white"/>
           <h1 className={styles.title}>
-            <i>Who am I?</i>
+            <i>who am i?</i>
           </h1>
 
           <h2 className={styles.aboutme}>
-            First-year sophomore @Purdue (2026), front-end & full-stack <br></br>developer,
+            first-year sophomore @Purdue (2026), front-end & full-stack <br></br>developer,
              self-starter, people-lover, lifelong-learner, and hyphen-overuser.
           </h2>
         <Faders>
           <div className= {styles.aboutexperience}>
             <div>
-                <h2 className={styles.abouttitle}>Experience</h2>
+                <h2 className={styles.abouttitle}>experience</h2>
                 <div className={styles.experiences}>
                     <p className= {styles.experiencetext}
+                        onMouseEnter={() => {setExpOne(true)}}
+                        onMouseLeave={handleMouseLeaveOne}
                         onClick={clickOne}>
                         <b>Human-Centered Software Systems Lab</b><br></br>
                         Undergraduate Research Assistant
                     </p>
                 </div>
                 <div className={styles.experiences}>
-                    <p className= {styles.experiencetext} onClick={clickTwo}>
+                    <p className= {styles.experiencetext}
+                        onMouseEnter={() => {setExpTwo(true)}}
+                        onMouseLeave={handleMouseLeaveTwo}
+                        onClick={clickTwo}>
                         <b>AstraZeneca</b><br></br>
                         App Development, The Data Mine Corporate Partners
                     </p>
                 </div>
                 <div className={styles.experiences}>
-                    <p className= {styles.experiencetext} onClick={clickThree}>
+                    <p className= {styles.experiencetext}
+                        onMouseEnter={() => {setExpThree(true)}}
+                        onMouseLeave={handleMouseLeaveThree}
+                        onClick={clickThree}>
                         <b>IU Luddy School of Informatics</b><br></br>
                         Undergraduate Research Assistant
                     </p>
@@ -150,7 +196,7 @@ const About = () => {
             </div>
 
             <div>
-                <h2 className={styles.abouttitle}>Skills & Certificates</h2>
+                <h2 className={styles.abouttitle}>skills & certifications</h2>
                 <table className={styles.table}>
                     <thead>
                         <tr>

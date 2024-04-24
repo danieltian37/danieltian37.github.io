@@ -22,6 +22,9 @@ const GlobalContextProvider = ({ children }) => {
     const [isVisible4, setIsVisible4] = useState(false);
     const [clicked, setClicked] = useState(false);
     const [first, setFirst] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    console.log("Loaded: " + isLoaded)
 
     const leftButton = () => {
       if (isVisible1) {
@@ -116,6 +119,8 @@ const GlobalContextProvider = ({ children }) => {
             rightButton,
             setClicked,
             clicked,
+            isLoaded,
+            setIsLoaded,
         }}>
             {children}
 

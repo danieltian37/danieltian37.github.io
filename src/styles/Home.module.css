@@ -210,7 +210,7 @@
   background-color: #28282B;
   transition: background-color 1s ease-in-out;
   text-align: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
   justify-content: center;
   overflow: visible;
 }
@@ -262,13 +262,12 @@
   margin-right: auto;
   padding: 1.5vh 1vh 1.5vh 1vh;
   position: relative;
-  font-family: "Roboto" sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 300;
   font-size: 2rem;
   letter-spacing: 0.1rem;
   top: 18vh;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  opacity: 0;
   transition: opacity 0.5s ease-in-out, text-shadow 0.4s ease-in-out;;
 }
 
@@ -286,7 +285,7 @@
   line-height: 1.15;
   font-size: 15vh;
   position: absolute;
-  font-family: "Roboto" sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 100;
   background-color: transparent;
   padding: 0 0 0 0;
@@ -309,6 +308,7 @@
 }
 
 .aboutme {
+  margin-top: 6rem;
   position: relative;
   font-weight: 300;
   color: #28282B;
@@ -332,11 +332,13 @@
   left: 2rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   color: #28282B;
   gap: 4rem;
   text-align: left;
   font-size: 1.1rem;
   font-weight: 200;
+  margin-bottom: 6rem;
 }
 
 .table {
@@ -403,7 +405,7 @@
   margin: 10rem 0 0 0;
   line-height: 1.15;
   font-size: 4rem;
-  font-family: "Roboto" sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 100;
   background-color: transparent;
   padding: 0 0 0 0;
@@ -490,10 +492,10 @@
 }
 
 .personaltitle {
-  margin: 15vh 0 6vh 0;
+  margin: 15vh 0 10vh 0;
   line-height: 1.15;
   font-size: 4rem;
-  font-family: "Roboto" sans-serif;
+  font-family: "Nunito", sans-serif;
   font-weight: 200;
   background-color: transparent;
   z-index: 2;
@@ -631,7 +633,7 @@
   position: absolute;
   font-size: 4rem;
   font-weight: 100;
-  font-family: 'Roboto' sans-serif;
+  font-family: 'Nunito', sans-serif;
   top: 6%;
   left: 50%;
   translate: -50%;
@@ -671,6 +673,7 @@
 .textarea {
   width: 40rem;
   height: 10rem;
+  max-height: 20rem;
   padding: 10px;
   border: 0;
   outline: none;
@@ -678,6 +681,9 @@
   margin-bottom: 0.9rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background-color: transparent;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 1.5rem;
 
   font-size: 1.2rem;
   font-family: 'Roboto' sans-serif;
