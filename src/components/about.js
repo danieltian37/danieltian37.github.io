@@ -170,8 +170,8 @@ const About = () => {
                         onMouseEnter={() => {setExpOne(true)}}
                         onMouseLeave={handleMouseLeaveOne}
                         onClick={clickOne}>
-                        <b>Human-Centered Software Systems Lab</b><br></br>
-                        Undergraduate Research Assistant
+                        <b>Envision Center</b><br></br>
+                        Web Visualization Programmer
                     </p>
                 </div>
                 <div className={styles.experiences}>
@@ -179,8 +179,8 @@ const About = () => {
                         onMouseEnter={() => {setExpTwo(true)}}
                         onMouseLeave={handleMouseLeaveTwo}
                         onClick={clickTwo}>
-                        <b>AstraZeneca</b><br></br>
-                        App Development, The Data Mine Corporate Partners
+                        <b>Human-Centered Software Systems Lab</b><br></br>
+                        Undergraduate Research Assistant
                     </p>
                 </div>
                 <div className={styles.experiences}>
@@ -188,7 +188,7 @@ const About = () => {
                         onMouseEnter={() => {setExpThree(true)}}
                         onMouseLeave={handleMouseLeaveThree}
                         onClick={clickThree}>
-                        <b>IU Luddy School of Informatics</b><br></br>
+                        <b>Stanford University Doerr School of Sustainability</b><br></br>
                         Undergraduate Research Assistant
                     </p>
                 </div>
@@ -239,21 +239,21 @@ const About = () => {
 
 export default About;
 
-const ExperienceOne = () => {
+const ExperienceTwo = () => {
     return (
         <>
             <div className = {styles.experiencebox}>
-                <h2>November 2023 — Present</h2>
+                <h2>November 2023 — May 2024</h2>
                 <Image
                     src = "/KnowledgeBase.png"
                     width = {0}
                     height = {0}
                     sizes="100vw"
                     style={{ width: '100%', height: 'auto'}}
-                    alt = "Picture of WebDecide"
+                    alt = "Picture of Decide"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Developed WebDecide, an interactive knowledge base D3.js visualization for data crawled from Stack Overflow 
+                    — Developed Decide, an interactive knowledge base D3.js visualization for data crawled from Stack Overflow 
                     </p>
                 <p className = {styles.experiencebullets}>
                     — Created functions to check deep learning model compatibility, search versions, explore with references
@@ -265,25 +265,28 @@ const ExperienceOne = () => {
         </>
     );
 }
-const ExperienceTwo = () => {
+const ExperienceOne = () => {
     return (
         <>
             <div className = {styles.experiencebox}>
-                <h2>January 2024 — Present</h2>
+                <h2>May 2024 — Present</h2>
                 <Image
-                    src = "/Tulip.jpg"
+                    src = "/flightprofilerdemo.gif"
                     width = {0}
                     height = {0}
                     sizes="100vw"
                     style={{ width: '100%', height: 'auto' }}
-                    alt = "Picture of Tulip"
+                    alt = "FlightProfiler 3D Weather Demo"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Spearheaded development and deployment of company apps using Tulip and PowerBi, in order to align with business objectives to streamline processes, improve operational, employee efficiency
+                    — Developed 3D real-time weather visualization web application to enhance safety for general aviation pilots
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Collaborated closely in Lean-Agile optimization with a small cross-functional team to deliver requirements, design custom solutions, and ensure seamless integration into existing workflows
+                    — Optimized WebGL performance using LOD management and data culling to handle seamless, simultaneous data processing and visualization of 40k+ data points
                     </p>
+                <p className = {styles.experiencebullets}>
+                    — Implemented commercial flight path tracking by aggregating ADS-B and FAA data, creating a smooth 3D viewing experience for general use
+                </p>
             </div>
         </>
     );
@@ -292,20 +295,20 @@ const ExperienceThree = () => {
     return (
         <>
             <div className = {styles.experiencebox}>
-                <h2>May 2022 — December 2022</h2>
+                <h2>January 2024 — Present</h2>
                 <Image
-                    src = "/SVM.png"
+                    src = "/SDSS.png"
                     width = {0}
                     height = {0}
                     sizes="100vw"
                     style={{ width: '100%', height: 'auto' }}
-                    alt = "Picture of WebDecide"
+                    alt = "SDSS Logo"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Created a privacy-preserving machine learning model, Support Vector Machine, on horizontally partitioned data
+                    — Identified optimal data levels and processing configurations, achieving enhanced insights into lightning activity patterns, spatial distributions, and temporal variations
                 </p>
                 <p className = {styles.experiencebullets}>
-                    — Achieved 16.1% increased accuracy, allowing hospitals to anonymously train model built with SciKit-Learn with 85.4% classification accuracy
+                    — Developed Python functions for hierarchical data structuring, geographical data extraction, and efficient data storage using xarray and NetCDF formats
                 </p>
             </div>
         </>
