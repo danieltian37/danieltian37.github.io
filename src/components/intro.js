@@ -160,9 +160,9 @@ const Intro = () => {
                 <h1 className={styles.introname}>
                     Daniel Tian
                 </h1>
-                <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> developer</a>
-                <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> designer</a>
-                <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>dreamer.</i></b></a>
+                <a className={styles.introsub} href="#About"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> developer,</a>
+                <a className={styles.introsub} href="#Projects"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> starter,</a>
+                <a className={styles.introsub} href="#Personal"> <span style={{ fontSize: fontSize, position: 'relative', top: top }}>❀</span> <b><i>storyteller.</i></b></a>
             </div>
             
 

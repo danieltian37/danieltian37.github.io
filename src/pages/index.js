@@ -37,7 +37,7 @@ export default function Home() {
 
             <div className={`${styles.container} ${styles.projects}`} id="Projects">
               <Down link="#Projects" color="black"/>
-              <p className={styles.projectTitle}><i>personal projects</i></p>
+              <p className={styles.projectTitle}><i>what have i created?</i></p>
               <p className={styles.projectIntro}>click to learn more!</p>
               <div className={styles.rotate}>
                     <Nodes/>

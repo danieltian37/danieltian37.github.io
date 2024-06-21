@@ -154,17 +154,17 @@ const About = () => {
         <div className={[styles.container, styles.first].join(" ")} id="About" ref={container}>
         <Down link="#About" color="white"/>
           <h1 className={styles.title}>
-            <i>who am i?</i>
+            <i>what's my story?</i>
           </h1>
 
           <h2 className={styles.aboutme}>
-            first-year sophomore @Purdue (2026), front-end & full-stack <br></br>developer,
-             self-starter, people-lover, lifelong-learner, and hyphen-overuser.
+            second-year junior @Purdue (graduating 2026), front-end & full-stack <br></br>
+            developer, self-starter, people-lover, lifelong-learner, and hyphen-overuser. <br></br>
           </h2>
         <Faders>
           <div className= {styles.aboutexperience}>
             <div>
-                <h2 className={styles.abouttitle}>experience</h2>
+                <h2 className={styles.abouttitle}>experiences</h2>
                 <div className={styles.experiences}>
                     <p className= {styles.experiencetext}
                         onMouseEnter={() => {setExpOne(true)}}
@@ -208,7 +208,7 @@ const About = () => {
                     <tbody>
                     <tr>
                         <td>Java / Python / C++</td>
-                        <td>React / Next.js/<br></br> React Native</td>
+                        <td>React / Next.js /<br></br> React Native</td>
                         <td>Microsoft Certified in<br></br> Azure Fundamentals</td>
                     </tr>
                     <tr>
