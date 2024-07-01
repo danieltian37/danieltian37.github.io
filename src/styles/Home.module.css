@@ -297,10 +297,13 @@
 
 .title.show {
   font-size: 4rem;
-  top: 8vw;
+  top: 12vh;
   color: #28282B;
   padding: 0 0 0 0;
   transition: font-size 2s ease-in, color 2s ease-in, top 2s ease-in, margin 2s ease-in;
+}
+.titlePlace {
+  margin: 10vh 0 10vh 0;
 }
 
 .about {
@@ -309,10 +312,10 @@
 
 .aboutme {
   margin-top: 6rem;
+  width: 60vw;
   position: relative;
   font-weight: 300;
   color: #28282B;
-  top: 6vh;
   left: -150vh;
   opacity: 0;
   font-size: 0em;
@@ -325,10 +328,17 @@
   font-size: 1.5em;
   transition: left 2.7s ease-in-out, opacity 2.7s ease-in-out;
 }
+.abouthoverable {
+  transition: text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.abouthoverable:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
 
 .aboutexperience {
   position: relative;
-  top: 3rem;
   left: 2rem;
   display: flex;
   flex-direction: row;
@@ -338,7 +348,8 @@
   text-align: left;
   font-size: 1.1rem;
   font-weight: 200;
-  margin-bottom: 6rem;
+  margin-bottom: 10rem;
+  justify-content: center;
 }
 
 .table {
@@ -352,10 +363,12 @@
   color: #28282B;
   font-size: 2.2rem;
   font-weight: 300;
+  margin: 0 0 5rem 0;
 }
 .experiencetext {
+  margin: -5px 0 20px 0;
   padding: 0 0 0 0;
-  line-height: 1.5rem;
+  line-height: 2rem;
   cursor: pointer;
 }
 .experiences {
@@ -503,6 +516,7 @@
   transition: font-size 1s ease-in, color 1s ease-in, top 1s ease-in, margin 1s ease-in;
 }
 .personalintro {
+  font-family: "Nunito", sans-serif;
   margin: -5rem 0 0 0;
   font-size: 1.2em;
   font-weight: 300;

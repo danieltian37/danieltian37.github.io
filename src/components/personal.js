@@ -19,7 +19,7 @@ const Personal = () => {
                 <Down link="#Personal" color="white"/>
                 <p className={styles.personaltitle}><i>who am i?</i></p>
                 <p className={styles.personalintro}>
-                    I'm Daniel Tian, and I was born into a storytelling family. I was raised on silly memories, Chinese legends, and everything in between. 
+                    I was born into a storytelling family. I was raised on silly memories, Chinese legends, and everything in between. 
                     For as long as I've known language, I've loved stories: the motivations, characters, worlds, lives, emotions, and lessons that each carry. 
                     All of my interests reflect that love, and I hope to share that with you below!
                 </p>

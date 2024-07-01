@@ -148,6 +148,20 @@ const About = () => {
             setExpThree(false);
         }
     }
+    const handleClick = (e, link) => {
+        e.preventDefault();
+        const targetElement = document.querySelector(link);
+        const offset = link == "#Experiences" ? -100 : 0;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = targetElement.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition + offset;
+
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    };
 
     return (
     <>
@@ -156,15 +170,32 @@ const About = () => {
           <h1 className={styles.title}>
             <i>what's my story?</i>
           </h1>
+          <h1 className={styles.titlePlace}></h1>
 
           <h2 className={styles.aboutme}>
-            second-year junior @Purdue (graduating 2026), front-end & full-stack <br></br>
-            developer, self-starter, people-lover, lifelong-learner, and hyphen-overuser. <br></br>
+            I'm a second-year junior @Purdue (graduating 2026), full-stack <br></br>
+            developer, self-starter, people-lover, lifelong-learner, and hyphen-overuser.
+            <br></br>
+            <br></br>
+            <i>I'm dedicated to creating value, impact, and meaning in people's lives. </i>
+            <br></br>
+            <br></br>
+            <div className={styles.abouthoverable} onClick={(e) => handleClick(e, '#Experiences')}>
+            Professionally, I love application development and watching my creations come to life. 
+            Even more so, I love watching others interact with what I've made and seeing the impact software can make, merely with the words of my laptop.
+            </div>
+            <br></br>
+            <br></br>
+            <div className={styles.abouthoverable} onClick={(e) => handleClick(e, '#Personal')}>
+            Personally, I love stories, reading, and photography (I do graduation and portraits pictures too :)). 
+            I especially love people; meeting new people and exchanging stories is my lifeline.
+            </div>
           </h2>
+        <hr style={{width: "30rem", margin: "3rem"}} id="Experiences"></hr>
         <Faders>
           <div className= {styles.aboutexperience}>
             <div>
-                <h2 className={styles.abouttitle}>experiences</h2>
+                <h2 className={styles.abouttitle}>check out my experiences</h2>
                 <div className={styles.experiences}>
                     <p className= {styles.experiencetext}
                         onMouseEnter={() => {setExpOne(true)}}
@@ -180,7 +211,7 @@ const About = () => {
                         onMouseLeave={handleMouseLeaveTwo}
                         onClick={clickTwo}>
                         <b>Human-Centered Software Systems Lab</b><br></br>
-                        Undergraduate Research Assistant
+                        Web Development Research Assistant
                     </p>
                 </div>
                 <div className={styles.experiences}>
@@ -189,14 +220,14 @@ const About = () => {
                         onMouseLeave={handleMouseLeaveThree}
                         onClick={clickThree}>
                         <b>Stanford University Doerr School of Sustainability</b><br></br>
-                        Undergraduate Research Assistant
+                        Machine Learning Research Assistant
                     </p>
                 </div>
 
             </div>
 
             <div>
-                <h2 className={styles.abouttitle}>skills & certifications</h2>
+                <h2 className={styles.abouttitle}>and what I've learned so far</h2>
                 <table className={styles.table}>
                     <thead>
                         <tr>
