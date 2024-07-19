@@ -178,20 +178,8 @@ const About = () => {
             <br></br>
             <br></br>
             <i>I'm dedicated to creating value, impact, and meaning in people's lives. </i>
-            <br></br>
-            <br></br>
-            <div className={styles.abouthoverable} onClick={(e) => handleClick(e, '#Experiences')}>
-            Professionally, I love application development and watching my creations come to life. 
-            Even more so, I love watching others interact with what I've made and seeing the impact software can make, merely with the words of my laptop.
-            </div>
-            <br></br>
-            <br></br>
-            <div className={styles.abouthoverable} onClick={(e) => handleClick(e, '#Personal')}>
-            Personally, I love stories, reading, and photography (I do graduation and portraits pictures too :)). 
-            I especially love people; meeting new people and exchanging stories is my lifeline.
-            </div>
           </h2>
-        <hr style={{width: "30rem", margin: "3rem"}} id="Experiences"></hr>
+        <hr style={{width: "30rem", margin: "2rem 0 3rem 0"}} id="Experiences"></hr>
         <Faders>
           <div className= {styles.aboutexperience}>
             <div>
