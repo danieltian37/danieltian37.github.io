@@ -168,7 +168,7 @@ const About = () => {
         <div className={[styles.container, styles.first].join(" ")} id="About" ref={container}>
         <Down link="#About" color="white"/>
           <h1 className={styles.title}>
-            <i>what's my story?</i>
+            <i>who am I?</i>
           </h1>
           <h1 className={styles.titlePlace}></h1>
 

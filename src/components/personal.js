@@ -17,7 +17,7 @@ const Personal = () => {
     return (
         <div className={`${styles.container} ${styles.personal}`} id = "Personal"> 
                 <Down link="#Personal" color="white"/>
-                <p className={styles.personaltitle}><i>who am i?</i></p>
+                <p className={styles.personaltitle}><i>what's my story?</i></p>
                 <p className={styles.personalintro}>
                     I was born into a storytelling family. I was raised on silly memories, Chinese legends, and everything in between. 
                     For as long as I've known language, I've loved stories: the motivations, characters, worlds, lives, emotions, and lessons that each carry. 
