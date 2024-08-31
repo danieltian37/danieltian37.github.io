@@ -62,7 +62,7 @@ function ContactForm() {
                 index.current = 0;
                 setCurrWord(words[0]);
             }
-        }, 2000);
+        }, 4000);
     }
     return () => clearInterval(interval);
   });

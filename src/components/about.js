@@ -173,8 +173,8 @@ const About = () => {
           <h1 className={styles.titlePlace}></h1>
 
           <h2 className={styles.aboutme}>
-            I'm a second-year junior @Purdue (graduating 2026), full-stack <br></br>
-            developer, self-starter, people-lover, lifelong-learner, and hyphen-overuser.
+            I'm a junior @Purdue, full-stack developer<br></br>
+            self-starter, people-lover, lifelong-learner, and hyphen-overuser.
             <br></br>
             <br></br>
             <i>I'm dedicated to creating value, impact, and meaning in people's lives. </i>
