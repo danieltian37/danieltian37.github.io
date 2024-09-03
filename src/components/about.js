@@ -190,7 +190,7 @@ const About = () => {
                         onMouseLeave={handleMouseLeaveOne}
                         onClick={clickOne}>
                         <b>Envision Center</b><br></br>
-                        Web Visualization Programmer
+                        Software Engineering Intern
                     </p>
                 </div>
                 <div className={styles.experiences}>
@@ -198,8 +198,8 @@ const About = () => {
                         onMouseEnter={() => {setExpTwo(true)}}
                         onMouseLeave={handleMouseLeaveTwo}
                         onClick={clickTwo}>
-                        <b>Human-Centered Software Systems Lab</b><br></br>
-                        Web Development Research Assistant
+                        <b>Purdue University</b><br></br>
+                        Lead Instructor
                     </p>
                 </div>
                 <div className={styles.experiences}>
@@ -207,8 +207,8 @@ const About = () => {
                         onMouseEnter={() => {setExpThree(true)}}
                         onMouseLeave={handleMouseLeaveThree}
                         onClick={clickThree}>
-                        <b>Stanford University Doerr School of Sustainability</b><br></br>
-                        Machine Learning Research Assistant
+                        <b>Stanford University</b><br></br>
+                        Machine Learning Research Intern
                     </p>
                 </div>
 
@@ -262,24 +262,21 @@ const ExperienceTwo = () => {
     return (
         <>
             <div className = {styles.experiencebox}>
-                <h2>November 2023 — May 2024</h2>
+                <h2>August 2024 — Present</h2>
                 <Image
-                    src = "/KnowledgeBase.png"
+                    src = "/cs193.png"
                     width = {0}
                     height = {0}
                     sizes="100vw"
                     style={{ width: '100%', height: 'auto'}}
-                    alt = "Picture of Decide"
+                    alt = "CS193"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Developed Decide, an interactive knowledge base D3.js visualization for data crawled from Stack Overflow 
+                    — Lectured 900+ first-year CS students while managing TA's, creating and teaching course materials covering Git, terminal, shell scripting, Linux \& Unix, LaTeX, and TCP/ICP
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Created functions to check deep learning model compatibility, search versions, explore with references
+                    — Coordinated expansion to Purdue University Indianapolis (PUI), managing TA's/lecturers for 150+ enrolled
                     </p>
-                <p className = {styles.experiencebullets}>
-                    — Migrated 1,438 nodes formatted in Neo4j to RDF, allowing for efficient SPARQL queries
-                </p>
             </div>
         </>
     );
@@ -301,10 +298,13 @@ const ExperienceOne = () => {
                     — Developed 3D real-time weather visualization web application to enhance safety for general aviation pilots
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Optimized WebGL performance using LOD management and data culling to handle seamless, simultaneous data processing and visualization of 40k+ data points
+                    — Optimized OpenGL graphics performance to handle simultaneous visualization of up to 30,000 data points by reducing rendering by levels of detail and culling non-essential data
                     </p>
                 <p className = {styles.experiencebullets}>
-                    — Implemented commercial flight path tracking by aggregating ADS-B and FAA data, creating a smooth 3D viewing experience for general use
+                    — Spearheaded 3D Weather's FAA acquisition transition, ensuring efficient transfer of knowledge to new teams by managing database migration of AWS clusters and operational scripts
+                </p>
+                <p className = {styles.experiencebullets}>
+                    — Enhanced storage, distribution, and scalability to accommodate increased usage following FAA acquisition by leveraging AWS tools including S3, CloudFront, EC2
                 </p>
             </div>
         </>
@@ -314,7 +314,7 @@ const ExperienceThree = () => {
     return (
         <>
             <div className = {styles.experiencebox}>
-                <h2>January 2024 — Present</h2>
+                <h2>January 2024 — August 2024</h2>
                 <Image
                     src = "/SDSS.png"
                     width = {0}
@@ -324,10 +324,10 @@ const ExperienceThree = () => {
                     alt = "SDSS Logo"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Identified optimal data levels and processing configurations, achieving enhanced insights into lightning activity patterns, spatial distributions, and temporal variations
+                    — Reduced data requirements by 35\% for ConvLSTM model by identifying optimal data levels and processing configurations, achieving efficient insights into lightning activity, spatial distributions, and temporal variations
                 </p>
                 <p className = {styles.experiencebullets}>
-                    — Developed Python functions for hierarchical data structuring, geographical data extraction, and efficient data storage using xarray and NetCDF formats
+                    — Standardized model analysis data preprocessing by implementing hierarchical data structuring and extraction
                 </p>
             </div>
         </>
