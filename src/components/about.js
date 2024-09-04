@@ -295,9 +295,6 @@ const ExperienceOne = () => {
                     alt = "FlightProfiler 3D Weather Demo"
                 />
                 <p className = {styles.experiencebullets}>
-                    — Developed 3D real-time weather visualization web application to enhance safety for general aviation pilots
-                    </p>
-                <p className = {styles.experiencebullets}>
                     — Optimized OpenGL graphics performance to handle simultaneous visualization of up to 30,000 data points by reducing rendering by levels of detail and culling non-essential data
                     </p>
                 <p className = {styles.experiencebullets}>
