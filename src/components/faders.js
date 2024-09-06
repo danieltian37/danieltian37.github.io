@@ -16,7 +16,7 @@ const Faders = ({ children, margin = '-400px' }) => {
       };
 
       const intersectionObserver = new IntersectionObserver(handleIntersection, {
-        threshold: 0.2,
+        threshold: 0.01,
         rootMargin: margin + " 5px -100px 5px",
       });
 
