@@ -12,7 +12,7 @@ interface BlogPostPageProps {
 export async function generateStaticParams() {
   const posts = await getSortedPostsData();
   return posts.map((post) => ({
-    id: post.id,
+    id: post.slug,
   }));
 }
 
