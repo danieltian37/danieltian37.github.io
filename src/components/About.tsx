@@ -83,17 +83,17 @@ const About = () => {
               </h1>
               <div className="flex gap-2">
                 <SocialLink 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="https://linkedin.com/in/danieljtian" 
                   icon="/icons/linkedin.svg" 
                   label="LinkedIn Profile"
                 />
                 <SocialLink 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/github37" 
                   icon="/icons/github.svg" 
                   label="GitHub Profile"
                 />
                 <SocialLink 
-                  href="https://instagram.com/yourusername" 
+                  href="https://instagram.com/denial.tian" 
                   icon="/icons/instagram.svg" 
                   label="Instagram Profile"
                 />
