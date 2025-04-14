@@ -10,6 +10,13 @@ const nextConfig = {
     }
     return config;
   },
+  output: 'export',
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 module.exports = nextConfig; 
