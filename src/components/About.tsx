@@ -88,7 +88,7 @@ const About = () => {
                   label="LinkedIn Profile"
                 />
                 <SocialLink 
-                  href="https://github.com/github37" 
+                  href="https://github.com/danieltian37" 
                   icon="/icons/github.svg" 
                   label="GitHub Profile"
                 />
